@@ -1,24 +1,27 @@
-import Model.Employee;
+import Model.Manager;
 import Model.Idol;
+import Model.Position;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        var Jungkook = new Idol("Jungkook", 1997, "Busan", 2011 );
-        var Sungdeuk = new Employee("Sungdeuk", 1983, "Seoul", 2013);
+        var Jungkook = new Idol("Jungkook", 1997, 2011, Position.Dance, false, true);
+        var Sejin = new Manager("Sejin", 1983, 2013);
+
+        if (Jungkook.isInGroup()) {
+            System.out.println("BTS <3");
+        } else {
+            System.out.println("not in group");
+
+            Jungkook.sing();
+            Sejin.teachDancemove();
+            Jungkook.workHard();
+            Sejin.workHard();
+            Sejin.teachNewSong();
+            Jungkook.dance();
 
 
-        Jungkook.sing();
-        Sungdeuk.teachDancemove();
-        Jungkook.workHard();
-        Sungdeuk.workHard();
-        Sungdeuk.teachNewSong();
-
-
-
-
-
-
-
-    }}
+        }
+    }
+}
