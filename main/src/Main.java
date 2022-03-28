@@ -9,7 +9,7 @@ public class Main {
         var Jungkook = new Idol("Jungkook", 1997, 2011, Position.Dance, false, true);
         var Sejin = new Manager("Sejin", 1983, 2013);
 
-        if (Jungkook.isInGroup()) {
+        if (Jungkook.isInGroup()) { //why doesnt this work?
             System.out.println("BTS <3");
         } else {
             System.out.println("not in group");
