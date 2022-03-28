@@ -1,4 +1,6 @@
 package Model;
 
-public class Track {
+public class Track  {
+    String trackTitle = "Tracktitle";
+    int trackInSeconds = 0;
 }

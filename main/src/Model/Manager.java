@@ -10,7 +10,6 @@ public class Manager extends Employee {
     public void workHard() {
         System.out.println("Helping the idol!");
     }
-
     public void teachNewSong() {
         System.out.println("Teaching new song");
     }
