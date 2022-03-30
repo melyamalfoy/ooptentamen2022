@@ -11,13 +11,16 @@ public abstract class Employee {
         dateStartOfContract = 0;
     }
 
-    public Employee(String name, int dateOfBirth, int dateStartOfContract) {
+    public Employee(String name,
+                    int dateOfBirth,
+                    int dateStartOfContract) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.dateStartOfContract = dateStartOfContract;
     }
 
     public String getName() {
+
         return name;
     }
 

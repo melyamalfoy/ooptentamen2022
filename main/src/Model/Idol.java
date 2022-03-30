@@ -95,10 +95,12 @@ public class Idol extends Employee {
     }
 
     public String workHard() {
+
         return "Practicing very hard!";
     }
 
     public String sing() {
+
         return vocal + "!";
     }
 
@@ -110,18 +112,22 @@ public class Idol extends Employee {
     }
 
     public String getRole() {
+
         return role;
     }
 
     public boolean isRap() {
+
         return rap;
     }
 
     public boolean isDance() {
+
         return dance;
     }
 
     public String getVocal() {
+
         return vocal;
     }
 
