@@ -3,31 +3,83 @@ package Model;
 public class Idol extends Employee {
 
     private boolean isLeader;
-    private boolean inGroup ;
+    private boolean inGroup;
+    private String role;
+    private boolean rap;
+    private boolean dance;
+    private String vocal;
+
+    public Idol() {
+        super();
+        isLeader = false;
+        inGroup = false;
+        role = "None";
+        dance = false;
+        rap = false;
+        vocal = "vocal";
+    }
+
+    public Idol(boolean isLeader,
+                boolean inGroup,
+                String role,
+                boolean rap,
+                String vocal,
+                boolean dance) {
+        super();
+        this.isLeader = isLeader;
+        this.inGroup = inGroup;
+        this.role = role;
+        this.rap = rap;
+        this.vocal = vocal;
+        this.dance = dance;
+    }
+
+    public Idol(String name,
+                int dateOfBirth,
+                int dateStartOfContract) {
+        super(name,
+                dateOfBirth,
+                dateStartOfContract);
+        isLeader = false;
+        inGroup = false;
+        role = "None";
+        dance = false;
+        rap = false;
+        vocal = "vocal";
+    }
+
+
+
+
 
 
     public Idol(String name,
                 int dateOfBirth,
                 int dateStartOfContract,
-                Position dance,
-                boolean isLeader, boolean inGroup) {
+                boolean isLeader,
+                boolean inGroup,
+                String role,
+                boolean rap,
+                String vocal,
+                boolean dance
+    ) {
         //zelfde als bij employee
         super(name,
                 dateOfBirth,
                 dateStartOfContract);
         this.isLeader = isLeader;
         this.inGroup = inGroup;
+        this.role = role;
+        this.rap = rap;
+        this.vocal = vocal;
+        this.dance = dance;
     }
 
-    public boolean isLeader() {
+    public boolean getLeader() {
         return isLeader;
     }
 
-    public void setLeader(boolean leader) {
-        isLeader = leader;
-    }
-
-    public boolean isInGroup() {
+    public boolean getInGroup() {
         return inGroup;
     }
 
@@ -42,16 +94,19 @@ public class Idol extends Employee {
        return "sorry I don't rap!";
     }
 
-    public void workHard() {
-        System.out.println("Practicing very hard!");
+    public String workHard() {
+        return "Practicing very hard!";
     }
 
-    public void sing() {
-        System.out.println("lalalala! ");
+    public String sing() {
+        return vocal + "!";
     }
 
-    public void dance() {
-        System.out.println("dance your butt off");
+    public String dance() {
+        if (dance == true) {
+            return "step step step";
+        }
+        return "Sorry not a dancer!";
     }
 
     public String getRole() {

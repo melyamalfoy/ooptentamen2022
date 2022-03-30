@@ -5,6 +5,12 @@ public abstract class Employee {
     private int dateOfBirth;
     private int dateStartOfContract;
 
+    public Employee() {
+        name = " ";
+        dateOfBirth = 2008;
+        dateStartOfContract = 0;
+    }
+
     public Employee(String name, int dateOfBirth, int dateStartOfContract) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -13,10 +19,6 @@ public abstract class Employee {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getDateOfBirth() {
