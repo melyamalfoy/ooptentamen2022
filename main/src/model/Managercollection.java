@@ -27,7 +27,8 @@ public class Managercollection implements GroupInterface{
     public String toString(){
         String information= "List of managers in the company: \n";
         for(Manager man : managers){
-            information = information + man.toString()+"\n";
+            information = information
+                    + man.toString()+"\n";
         }
 
     return information;}

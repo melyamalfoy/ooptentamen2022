@@ -1,18 +1,24 @@
+package maincode;
+
 import model.Group;
 import model.Idol;
 import model.Manager;
 import model.Managercollection;
 
-// Melanie Grimminck
-// Doel Kpop programma;
-// 1. kpop idols toevoegen en hun info toevoegen aan het programma
-// 2. managers van de groepen toevoegen
-// 3. kpop idols aan een groep toevoegen
-// 4. manager aan een groep toevoegen
-// 5. idols en managers uit groep verwijderen
-// 6. idols kunnen met Performance(); een optreden geven
-// 7. managers managen een groep met Performance();
-// 8. idols en managers kunnen gebruik maken van Workhard();
+
+
+/*
+ Melanie Grimminck
+ Doel Kpop programma;
+ 1. kpop idols toevoegen en hun info toevoegen aan het programma
+ 2. managers van de groepen toevoegen
+ 3. kpop idols aan een groep toevoegen
+ 4. manager aan een groep toevoegen
+ 5. idols en managers uit groep verwijderen
+ 6. idols kunnen met Performance(); een optreden geven
+ 7. managers managen een groep met Performance();
+ 8. idols en managers kunnen gebruik maken van Workhard();
+*/
 
 public class Main {
     public static void main(String[] args) {
