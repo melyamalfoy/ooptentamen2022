@@ -55,7 +55,7 @@ public class Manager extends Employee {
 
     public boolean compare(Employee emp) {
         if (emp instanceof Manager) {
-            Manager man = (Manager) emp;
+            Manager man = (Manager) emp; //castof
             if (man.numberGroup > numberGroup) {
                 return true;
             }

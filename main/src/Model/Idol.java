@@ -84,10 +84,10 @@ public class Idol extends Employee {
     }
 
     public String Rap() {
-       if(rap==true){
-           return "ho ho ho!";
-       }
-       return "sorry I don't rap!";
+        if (rap == true) {
+            return "ho ho ho!";
+        }
+        return "sorry I don't rap!";
     }
 
     public String workHard() {
@@ -127,17 +127,17 @@ public class Idol extends Employee {
         return vocal;
     }
 
-    public String toString(){
+    public String toString() {
 
-        if(dance==true
+        if (dance == true
                 && rap == true
-                && isLeader==true
-                && inGroup==true){
-            return super.toString()+ "\n" +"Position:\t"+ getRole()+"\n"+
-                    "Idol in group\n"+
-                    "Leader of the group\n"+
-                    "Rapper\n"+
-                    "Dancer\n"+
+                && isLeader == true
+                && inGroup == true) {
+            return super.toString() + "\n" + "Position:\t" + getRole() + "\n" +
+                    "Idol in group\n" +
+                    "Leader of the group\n" +
+                    "Rapper\n" +
+                    "Dancer\n" +
                     vocal;
         }
         else{

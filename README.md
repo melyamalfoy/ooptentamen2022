@@ -1,10 +1,10 @@
-# Vervang-dit-door-naam-van-je-project
+# Kpop programma
 
-Voornaam: Vervang-dit-door-je-voornaam
+Voornaam: Melanie 
 
-Achternaam: Vervang-dit-door-je-achternaam
+Achternaam: Grimminck
 
-Studentnummer: 0000000
+Studentnummer: 500858352
 
 ### Inleiding
 
@@ -12,13 +12,11 @@ Beschrijf hier kort het domein  en het doel van je applicatie.
 
 ### UML class diagram
 
-Vervang de tekst onder deze header met een link naar je uml-class-diagram plaatje. Hieronder een voorbeeld hoe je in markdown naar een plaatje kan linken:
-
+https://lucid.app/lucidchart/b142287e-0925-4bf2-950e-3de9cdde1ec4/edit?invitationId=inv_0a48722b-0712-46d5-951e-0b8f39fc3772
 ```markdown
-![](/vervang-dit-allemaal-met-jou-pad-en-png-bestand/uml-class-diagram.png)  
+![](out/UMLMelanie.png)  
 ```
 
- Je kunt [plantuml](https://plugins.jetbrains.com/plugin/7017-plantuml-integration) gebruiken om uml diagrammen mee te maken. Gebruik onderstaande template gebruiken om jezelf op weg te helpen. Je kan de documentatie hier raadplegen: https://plantuml.com/class-diagram. 
 
 ```puml
 @startuml

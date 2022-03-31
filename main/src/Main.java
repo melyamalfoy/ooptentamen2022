@@ -1,10 +1,17 @@
-//import Model.Manager;
-
-
 import Model.Group;
 import Model.Idol;
 import Model.Manager;
 
+// Melanie Grimminck
+// Doel Kpop programma;
+// 1. kpop idols toevoegen en hun info toevoegen aan het programma
+// 2. managers van de groepen toevoegen
+// 3. kpop idols aan een groep toevoegen
+// 4. manager aan een groep toevoegen
+// 5. idols en managers uit groep verwijderen
+// 6. idols kunnen met Performance(); een optreden geven
+// 7. managers managen een groep met Performance();
+// 8. idols en managers kunnen gebruik maken van Workhard();
 
 public class Main {
     public static void main(String[] args) {
@@ -57,7 +64,7 @@ public class Main {
                 false
         );
 
-        Group g = new Group(manager,"EXO");
+        Group g = new Group(manager, "EXO");
         System.out.println(jungkook.dance());
         g.joinGroup(jungkook);
         System.out.println(Namjoon.Rap());
@@ -68,11 +75,36 @@ public class Main {
         System.out.println(Jinseok.sing());
         g.joinGroup(Jinseok);
         System.out.print(g);
-        System.out.println(g.givePerformance());
-        if(g.leaveGroup(jungkook)){
-            System.out.println(jungkook.getName()+" removed!");
+        System.out.println(g.Performance());
+        if (g.leaveGroup(jungkook)) {
+            System.out.println(jungkook.getName() + " removed!");
         }
         System.out.println(g);
-        System.out.println(g.givePerformance());
+        System.out.println(g.Performance());
+        System.out.println(jungkook.workHard());
+        System.out.println(manager.workHard());
+        System.out.println(manager.teachDancemove());
+
+
+        System.out.println("List of Managers");
+        Manager m1 = new Manager("Carlos",
+                2010,
+                1991,
+                4);
+        Manager m2 = new Manager("Camillia",
+                2011,
+                1989,
+                10);
+        Manager m3 = new Manager("Felipe",
+                2007,
+                1990,
+                3);
+        Managercollection collect = new Managercollection();
+        collect.addManager(m1);
+        collect.addManager(m2);
+        collect.addManager(m3);
+        System.out.println(collect);
+        collect.sort();
+        System.out.println(collect);
     }
 }
