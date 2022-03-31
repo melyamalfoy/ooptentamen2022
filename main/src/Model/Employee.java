@@ -19,6 +19,10 @@ public abstract class Employee {
         this.dateStartOfContract = dateStartOfContract;
     }
 
+    public String toString(){
+        return getName()+"\n"+ getDateOfBirth()+"\n" + getDateStartOfContract();
+    }
+
     public String getName() {
 
         return name;

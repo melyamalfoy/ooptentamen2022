@@ -49,10 +49,6 @@ public class Idol extends Employee {
     }
 
 
-
-
-
-
     public Idol(String name,
                 int dateOfBirth,
                 int dateStartOfContract,
@@ -132,12 +128,12 @@ public class Idol extends Employee {
     }
 
     public String toString(){
-        String information = getName()+ "\n"+ getDateOfBirth()+"\n"+getDateStartOfContract();
+
         if(dance==true
                 && rap == true
                 && isLeader==true
                 && inGroup==true){
-            return information+ "\n"+getRole()+"\n"+
+            return super.toString()+ "\n"+getRole()+"\n"+
                     "Idol in group\n"+
                     "Leader of the group\n"+
                     "Rapper\n"+
@@ -146,13 +142,18 @@ public class Idol extends Employee {
         }
         else{
             if(dance == true && inGroup==true){
-                return information+ "\n"+getRole()+ "\n" + "Idol in group\n"+" Dancer";
+                return super.toString()+
+                        "\n"+getRole()+ "\n"
+                        + "Idol in group\n"
+                        + " Dancer";
             }
             if(rap == true && inGroup==true) {
-                return information + "Idol in group\n" + "Rapper";
+                return super.toString()
+                        + "Idol in group\n"
+                        + "Rapper";
             }
         }
-        return information;
+        return super.toString();
     }
 }
 
