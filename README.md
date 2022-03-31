@@ -73,21 +73,293 @@ abstract class Medium <<abstract>> {
 Plaats hier het resultaat van git log --pretty=format:"%hx %ad%x09%s" --date=short`
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen]
 
 ##### 2. Abstract class 'A' correct geïmplementeerd
 
 ```java
-Plaats hier je code snippets
+
+public abstract class Employee {
+    private String name;
+    private int dateOfBirth;
+    private int dateStartOfContract;
+
+    public Employee() {
+        name = " ";
+        dateOfBirth = 2008;
+        dateStartOfContract = 0;
+    }
+
+    public Employee(String name,
+                    int dateOfBirth,
+                    int dateStartOfContract) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.dateStartOfContract = dateStartOfContract;
+    }
+
+    public String toString(){
+        return "Name:\t"+ getName()+"\n"+ "Date of birth:\t"+ getDateOfBirth()+"\n" +"Start contract at:\t"+ getDateStartOfContract();
+    }
+
+    public String getName() {
+
+        return name;
+    }
+
+    public int getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+
+    public int getDateStartOfContract() {
+        return dateStartOfContract;
+    }
+
+
+    public abstract String workHard();
+}
+
 ```
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 3. Subclass implementeert abstract class
+##### subclass 1 Manager:
+```
+
+public class Manager extends Employee implements  Comparable<Manager> {
+    private int numberGroup;
+
+    public Manager() {
+        super();
+        numberGroup = 0;
+    }
+
+
+    public Manager(int numberGroup) {
+        super();
+        this.numberGroup = numberGroup;
+    }
+
+    public Manager(String name,
+                   int dateOfBirth,
+                   int dateStartOfContract) {
+        super(name,
+                dateOfBirth,
+                dateStartOfContract);
+        numberGroup = 0;
+    }
+
+    public Manager(String name,
+                   int dateStartOfContract,
+                   int dateOfBirth, int numberGroup) {
+        super(name,
+                dateOfBirth,
+                dateStartOfContract);
+        this.numberGroup = numberGroup;
+    }
+
+
+    public String workHard() {
+        return "Helping the idol!";
+    }
+
+    public String teachNewSong() {
+        return "Teaching new song";
+    }
+
+    public String teachDancemove() {
+        return "teaching dance move";
+    }
+
+    public int getNumberGroup() {
+        return numberGroup;
+    }
+
+    public String toString() {
+        return super.toString()+"\n" +"Number of groups:\t"+ getNumberGroup();
+    }
+
+    public boolean compare(Employee emp) {
+        if (emp instanceof Manager) {
+            Manager man = (Manager) emp; //castof
+            if (man.numberGroup > numberGroup) {
+                return true;
+            }
+        }
+        return false;
+    }
+    @Override
+    public int compareTo(Manager m){
+        if(this.compare(m)){
+            return 0;
+        }
+        return 1;
+    }
+}
 
 ```
-Plaats hier je code snippets
-```
+
+#### subclass 2 idol:
+''' package Model;
+
+public class Idol extends Employee {
+
+    private boolean isLeader;
+    private boolean inGroup;
+    private String role;
+    private boolean rap;
+    private boolean dance;
+    private String vocal;
+
+    public Idol() {
+        super();
+        isLeader = false;
+        inGroup = false;
+        role = "None";
+        dance = false;
+        rap = false;
+        vocal = "vocal";
+    }
+
+    public Idol(boolean isLeader,
+                boolean inGroup,
+                String role,
+                boolean rap,
+                String vocal,
+                boolean dance) {
+        super();
+        this.isLeader = isLeader;
+        this.inGroup = inGroup;
+        this.role = role;
+        this.rap = rap;
+        this.vocal = vocal;
+        this.dance = dance;
+    }
+
+    public Idol(String name,
+                int dateOfBirth,
+                int dateStartOfContract, boolean b, boolean b1, boolean b2, boolean b3, boolean b4) {
+        super(name,
+                dateOfBirth,
+                dateStartOfContract);
+        isLeader = false;
+        inGroup = false;
+        role = "None";
+        dance = false;
+        rap = false;
+        vocal = "vocal";
+    }
+
+
+    public Idol(String name,
+                int dateOfBirth,
+                int dateStartOfContract,
+                boolean isLeader,
+                boolean inGroup,
+                String role,
+                boolean rap,
+                String vocal,
+                boolean dance
+    ) {
+        //zelfde als bij employee
+        super(name,
+                dateOfBirth,
+                dateStartOfContract);
+        this.isLeader = isLeader;
+        this.inGroup = inGroup;
+        this.role = role;
+        this.rap = rap;
+        this.vocal = vocal;
+        this.dance = dance;
+    }
+
+    public boolean getLeader() {
+        return isLeader;
+    }
+
+    public boolean getInGroup() {
+        return inGroup;
+    }
+
+    public void setInGroup(boolean inGroup) {
+        this.inGroup = inGroup;
+    }
+
+    public String Rap() {
+        if (rap == true) {
+            return "ho ho ho!";
+        }
+        return "sorry I don't rap!";
+    }
+
+    public String workHard() {
+
+        return "Practicing very hard!";
+    }
+
+    public String sing() {
+
+        return vocal + "!";
+    }
+
+    public String dance() {
+        if (dance == true) {
+            return "step step step";
+        }
+        return "Sorry not a dancer!";
+    }
+
+    public String getRole() {
+
+        return role;
+    }
+
+    public boolean isRap() {
+
+        return rap;
+    }
+
+    public boolean isDance() {
+
+        return dance;
+    }
+
+    public String getVocal() {
+
+        return vocal;
+    }
+
+    public String toString() {
+
+        if (dance == true
+                && rap == true
+                && isLeader == true
+                && inGroup == true) {
+            return super.toString() + "\n" + "Position:\t" + getRole() + "\n" +
+                    "Idol in group\n" +
+                    "Leader of the group\n" +
+                    "Rapper\n" +
+                    "Dancer\n" +
+                    vocal;
+        } else {
+            if (dance == true && inGroup == true) {
+                return super.toString() + "\n" + "Position:\t" + getRole() + "\n"
+                        + "Idol in group\n"
+                        + " Dancer";
+            }
+            if (rap == true && inGroup == true) {
+                return super.toString() + "\n" + "Position:\t" + getRole() + "\n"
+                        + "Idol in group\n"
+                        + "Rapper";
+            }
+        }
+        return super.toString();
+    }
+}
+
+'''
 
 Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
