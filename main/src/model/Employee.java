@@ -1,17 +1,17 @@
-package Model;
+package model;
 
 public abstract class Employee {
     private String name;
     private int dateOfBirth;
     private int dateStartOfContract;
 
-    public Employee() {
+     protected Employee() {
         name = " ";
         dateOfBirth = 2008;
         dateStartOfContract = 0;
     }
 
-    public Employee(String name,
+    protected Employee(String name,
                     int dateOfBirth,
                     int dateStartOfContract) {
         this.name = name;

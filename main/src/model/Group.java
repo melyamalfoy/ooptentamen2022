@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class Group implements GroupInterface {
     }
 
     @Override
-    public String Performance() {
+    public String performance() {
         return "We don't need permission to dance!";
     }
 

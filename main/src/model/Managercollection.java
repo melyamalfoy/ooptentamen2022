@@ -1,10 +1,10 @@
-package Model;
+package model;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Managercollection implements GroupInterface{
-    private ArrayList<Manager> managers;
+    private final ArrayList<Manager> managers;
 
     public Managercollection(){
         managers = new ArrayList();
@@ -33,12 +33,14 @@ public class Managercollection implements GroupInterface{
     return information;}
 
     @Override
-    public String Performance() {
+    public String performance() {
         return "managing the group";
     }
 
     public void sort(){
         Collections.sort(managers);
     }
+
+
 }
 

@@ -1,7 +1,7 @@
-import Model.Group;
-import Model.Idol;
-import Model.Manager;
-import Model.Managercollection;
+import model.Group;
+import model.Idol;
+import model.Manager;
+import model.Managercollection;
 
 // Melanie Grimminck
 // Doel Kpop programma;
@@ -32,7 +32,7 @@ public class Main {
                 "lalala",
                 false
         );
-        Idol Namjoon = new Idol("Namjoon",
+        Idol namjoon = new Idol("Namjoon",
                 1993,
                 2015,
                 true,
@@ -43,7 +43,7 @@ public class Main {
                 false
         );
 
-        Idol Hoseok = new Idol("Hoseok",
+        Idol hoseok = new Idol("Hoseok",
                 1992,
                 2015,
                 false,
@@ -54,7 +54,7 @@ public class Main {
                 true
         );
 
-        Idol Jinseok = new Idol("Jinseok",
+        Idol jinseok = new Idol("Jinseok",
                 1991,
                 2015,
                 false,
@@ -68,20 +68,20 @@ public class Main {
         Group g = new Group(manager, "EXO");
         System.out.println(jungkook.dance());
         g.joinGroup(jungkook);
-        System.out.println(Namjoon.Rap());
-        g.joinGroup(Namjoon);
-        System.out.println(Hoseok.dance());
-        System.out.println(Hoseok.sing());
-        g.joinGroup(Hoseok);
-        System.out.println(Jinseok.sing());
-        g.joinGroup(Jinseok);
+        System.out.println(namjoon.rap());
+        g.joinGroup(namjoon);
+        System.out.println(hoseok.dance());
+        System.out.println(hoseok.sing());
+        g.joinGroup(hoseok);
+        System.out.println(jinseok.sing());
+        g.joinGroup(jinseok);
         System.out.print(g);
-        System.out.println(g.Performance());
+        System.out.println(g.performance());
         if (g.leaveGroup(jungkook)) {
             System.out.println(jungkook.getName() + " removed!");
         }
         System.out.println(g);
-        System.out.println(g.Performance());
+        System.out.println(g.performance());
         System.out.println(jungkook.workHard());
         System.out.println(manager.workHard());
         System.out.println(manager.teachDancemove());

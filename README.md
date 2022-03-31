@@ -202,7 +202,7 @@ public class Manager extends Employee implements  Comparable<Manager> {
 ```
 
 #### subclass 2 idol:
-''' package Model;
+''' package model;
 
 public class Idol extends Employee {
 

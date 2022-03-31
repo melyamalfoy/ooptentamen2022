@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Idol extends Employee {
 
@@ -36,7 +36,7 @@ public class Idol extends Employee {
 
     public Idol(String name,
                 int dateOfBirth,
-                int dateStartOfContract, boolean b, boolean b1, boolean b2, boolean b3, boolean b4) {
+                int dateStartOfContract) {
         super(name,
                 dateOfBirth,
                 dateStartOfContract);
@@ -83,8 +83,8 @@ public class Idol extends Employee {
         this.inGroup = inGroup;
     }
 
-    public String Rap() {
-        if (rap == true) {
+    public String rap() {
+        if (rap) {
             return "ho ho ho!";
         }
         return "sorry I don't rap!";
@@ -101,7 +101,7 @@ public class Idol extends Employee {
     }
 
     public String dance() {
-        if (dance == true) {
+        if (dance) {
             return "step step step";
         }
         return "Sorry not a dancer!";
@@ -127,27 +127,34 @@ public class Idol extends Employee {
         return vocal;
     }
 
+    @Override
     public String toString() {
+        final String positon = " \"Position:\\t\" ";
+        final String idolInGroup = "Idol in group\n";
 
-        if (dance == true
-                && rap == true
-                && isLeader == true
-                && inGroup == true) {
-            return super.toString() + "\n" + "Position:\t" + getRole() + "\n" +
-                    "Idol in group\n" +
+        if (dance
+                && rap
+                && isLeader
+                && inGroup) {
+
+            return super.toString() + "\n" +
+                    positon +
+                    getRole() + "\n" +
+                    idolInGroup +
                     "Leader of the group\n" +
                     "Rapper\n" +
                     "Dancer\n" +
                     vocal;
         } else {
-            if (dance == true && inGroup == true) {
-                return super.toString() + "\n" + "Position:\t" + getRole() + "\n"
-                        + "Idol in group\n"
+            if (dance && inGroup) {
+                return super.toString() + "\n" + positon + getRole() + "\n"
+                        + idolInGroup
                         + " Dancer";
             }
-            if (rap == true && inGroup == true) {
-                return super.toString() + "\n" + "Position:\t" + getRole() + "\n"
-                        + "Idol in group\n"
+            if (rap && inGroup) {
+                return super.toString() + "\n"
+                        + positon + getRole() + "\n"
+                        + idolInGroup
                         + "Rapper";
             }
         }

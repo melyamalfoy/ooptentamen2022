@@ -1,5 +1,5 @@
-package Model;
+package model;
 
 interface GroupInterface { //empty behaviour
-    String Performance();
+    String performance();
 }
