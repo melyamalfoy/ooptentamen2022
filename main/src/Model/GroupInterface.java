@@ -1,5 +1,5 @@
 package Model;
 
-interface GroupInterface { //leeg gedrag
-    void givePerformance();
+interface GroupInterface { //empty behaviour
+    String givePerformance();
 }

@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.ArrayList;
+
+
 public class Group implements GroupInterface {
     public boolean joinGroup(Idol idol) { //zie playlist voorbeeld
         return false;

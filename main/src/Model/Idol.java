@@ -36,7 +36,7 @@ public class Idol extends Employee {
 
     public Idol(String name,
                 int dateOfBirth,
-                int dateStartOfContract) {
+                int dateStartOfContract, boolean b, boolean b1, boolean b2, boolean b3, boolean b4) {
         super(name,
                 dateOfBirth,
                 dateStartOfContract);
@@ -133,7 +133,7 @@ public class Idol extends Employee {
                 && rap == true
                 && isLeader==true
                 && inGroup==true){
-            return super.toString()+ "\n"+getRole()+"\n"+
+            return super.toString()+ "\n" +"Position:\t"+ getRole()+"\n"+
                     "Idol in group\n"+
                     "Leader of the group\n"+
                     "Rapper\n"+
