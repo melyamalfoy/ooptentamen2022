@@ -139,16 +139,14 @@ public class Idol extends Employee {
                     "Rapper\n" +
                     "Dancer\n" +
                     vocal;
-        }
-        else{
-            if(dance == true && inGroup==true){
-                return super.toString()+
-                        "\n"+getRole()+ "\n"
+        } else {
+            if (dance == true && inGroup == true) {
+                return super.toString() + "\n" + "Position:\t" + getRole() + "\n"
                         + "Idol in group\n"
                         + " Dancer";
             }
-            if(rap == true && inGroup==true) {
-                return super.toString()
+            if (rap == true && inGroup == true) {
+                return super.toString() + "\n" + "Position:\t" + getRole() + "\n"
                         + "Idol in group\n"
                         + "Rapper";
             }

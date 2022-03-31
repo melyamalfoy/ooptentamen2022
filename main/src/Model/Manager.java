@@ -1,6 +1,6 @@
 package Model;
 
-public class Manager extends Employee {
+public class Manager extends Employee implements  Comparable<Manager> {
     private int numberGroup;
 
     public Manager() {
@@ -50,7 +50,7 @@ public class Manager extends Employee {
     }
 
     public String toString() {
-        return super.toString()+"\n" + getNumberGroup();
+        return super.toString()+"\n" +"Number of groups:\t"+ getNumberGroup();
     }
 
     public boolean compare(Employee emp) {
@@ -61,5 +61,12 @@ public class Manager extends Employee {
             }
         }
         return false;
+    }
+    @Override
+    public int compareTo(Manager m){
+        if(this.compare(m)){
+            return 0;
+        }
+        return 1;
     }
 }

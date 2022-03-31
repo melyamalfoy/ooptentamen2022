@@ -20,7 +20,7 @@ public abstract class Employee {
     }
 
     public String toString(){
-        return getName()+"\n"+ getDateOfBirth()+"\n" + getDateStartOfContract();
+        return "Name:\t"+ getName()+"\n"+ "Date of birth:\t"+ getDateOfBirth()+"\n" +"Start contract at:\t"+ getDateStartOfContract();
     }
 
     public String getName() {

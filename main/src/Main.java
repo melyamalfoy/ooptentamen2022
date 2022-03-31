@@ -1,6 +1,7 @@
 import Model.Group;
 import Model.Idol;
 import Model.Manager;
+import Model.Managercollection;
 
 // Melanie Grimminck
 // Doel Kpop programma;
