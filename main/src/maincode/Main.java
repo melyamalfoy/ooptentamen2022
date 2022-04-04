@@ -92,7 +92,6 @@ public class Main {
         System.out.println(manager.teachDancemove());
 
 
-
         System.out.println("List of Managers");
         Manager m1 = new Manager("Carlos",
                 2010,
