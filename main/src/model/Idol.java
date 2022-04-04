@@ -72,14 +72,17 @@ public class Idol extends Employee {
     }
 
     public boolean getLeader() {
+
         return isLeader;
     }
 
     public boolean getInGroup() {
+
         return inGroup;
     }
 
     public void setInGroup(boolean inGroup) {
+
         this.inGroup = inGroup;
     }
 
@@ -129,7 +132,7 @@ public class Idol extends Employee {
 
     @Override
     public String toString() {
-        final String positon = " \"Position:\\t\" ";
+        final String positon = "Position: \t" ;
         final String idolInGroup = "Idol in group\n";
 
         if (dance
@@ -147,7 +150,10 @@ public class Idol extends Employee {
                     vocal;
         } else {
             if (dance && inGroup) {
-                return super.toString() + "\n" + positon + getRole() + "\n"
+                return super.toString() +
+                        "\n" + positon +
+                        getRole() +
+                        "\n"
                         + idolInGroup
                         + " Dancer";
             }

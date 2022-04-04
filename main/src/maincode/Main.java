@@ -6,7 +6,6 @@ import model.Manager;
 import model.Managercollection;
 
 
-
 /*
  Melanie Grimminck
  Doel Kpop programma;
@@ -91,6 +90,7 @@ public class Main {
         System.out.println(jungkook.workHard());
         System.out.println(manager.workHard());
         System.out.println(manager.teachDancemove());
+
 
 
         System.out.println("List of Managers");

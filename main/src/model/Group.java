@@ -14,6 +14,7 @@ public class Group implements GroupInterface {
         groupName = "None";
 
     }
+
     public Group(Manager manager, String groupName) {
         group = new ArrayList();
         this.manager = manager;
@@ -21,12 +22,13 @@ public class Group implements GroupInterface {
     }
 
     //de ene constructer roept de andere aan
-    public Group(ArrayList<Idol> group, Manager manager, String groupName) {
-        this(manager,groupName);
+    public Group(ArrayList<Idol> group,
+                 Manager manager,
+                 String groupName) {
+        this(manager, groupName);
         this.group = group;
 
     }
-
 
 
     public void joinGroup(Idol idol) {
@@ -34,7 +36,7 @@ public class Group implements GroupInterface {
     }
 
     public boolean leaveGroup(Idol idol) {
-        if (group.size() > 0) {
+        if (group.isEmpty()) {
             group.remove(idol);
             return true;
         }
@@ -43,6 +45,7 @@ public class Group implements GroupInterface {
 
     @Override
     public String performance() {
+
         return "We don't need permission to dance!";
     }
 
@@ -53,9 +56,13 @@ public class Group implements GroupInterface {
     }
 
     public String toString() {
-        String information = "The manager: \n" + manager.toString() + "\n" + "Idols:\n";
+        String information = "The manager: \n"
+                + manager.toString()
+                + "\n" + "Idols:\n";
+
         for (Idol id : group) {
-            information = information + id.toString() + "\n";
+            information = information + id.toString() +
+                    "\n";
         }
         return information;
     }
