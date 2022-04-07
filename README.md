@@ -22,7 +22,7 @@ Doel Kpop programma;
 
 https://lucid.app/lucidchart/b142287e-0925-4bf2-950e-3de9cdde1ec4/edit?invitationId=inv_0a48722b-0712-46d5-951e-0b8f39fc3772
 ```markdown
-![](Melanie Grimminck UML.png)  
+[](MelanieGrimminckUML.png)  
 ```
 
 
