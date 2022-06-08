@@ -6,7 +6,8 @@ public class Managercollection implements GroupInterface {
     private final ArrayList<Manager> managers;
 
     public Managercollection(){
-        managers = new ArrayList();
+
+        managers = new ArrayList<Manager>();
     }
     public Managercollection(ArrayList<Manager> managers){
 
@@ -42,6 +43,6 @@ public class Managercollection implements GroupInterface {
 
         return "managing the group";
 
-
+    }
 }
 

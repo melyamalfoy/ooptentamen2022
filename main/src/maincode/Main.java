@@ -5,7 +5,7 @@ import model.Idol;
 import model.Manager;
 import model.Managercollection;
 
-
+import java.util.Scanner;
 /*
  Melanie Grimminck
  Doel Kpop programma;
@@ -110,8 +110,25 @@ public class Main {
         collect.addManager(m2);
         collect.addManager(m3);
         System.out.println(collect);
-        collect.sort();
-        System.out.println(collect);
+        System.out.println(m3.teachNewSong());
+        if (m1.compare(m2)) {
+            System.out.println(m2.getName()
+                    + " is better than "
+                    + m1.getName());
+        } else {
+            System.out.println(m1.getName()
+                    + " is better than "
+                    + m2.getName());
+        }
+        Scanner sc = new Scanner(System.in);
+    //    System.out.println("Please give the profit amount");
+      //  double profit = sc.nextDouble();
+      //  System.out.println(hoseok.salaryCalculator(profit));
+     //   hoseok.salaryRaise();
+     //   System.out.println(hoseok.salaryCalculator(profit));
+
+        m1.create_song(10);
+        System.out.println(m1.showSong());
     }
 
 

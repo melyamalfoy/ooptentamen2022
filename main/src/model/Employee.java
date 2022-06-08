@@ -45,6 +45,5 @@ public abstract class Employee {
         return dateStartOfContract;
     }
 
-
     public abstract String workHard();
 }

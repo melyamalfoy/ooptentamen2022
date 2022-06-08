@@ -1,5 +1,7 @@
 package model;
 
+import java.util.function.Function;
+
 public class Idol extends Employee {
 
     private boolean isLeader;
@@ -8,6 +10,7 @@ public class Idol extends Employee {
     private boolean rap;
     private boolean dance;
     private String vocal;
+    private Function<Double, Double> salary;
 
     public Idol() {
         super();
@@ -17,6 +20,7 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
+        salary = a -> 100 + a * 0.3;
     }
 
     public Idol(boolean isLeader,
@@ -32,6 +36,7 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
+        salary = a -> 100 + a * 0.3;
     }
 
     public Idol(String name,
@@ -46,6 +51,7 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
+        salary = a -> 100 + a * 0.3;
     }
 
 
@@ -69,6 +75,7 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
+        salary = a -> 100 + a * 0.3;
     }
 
     public boolean getLeader() {
