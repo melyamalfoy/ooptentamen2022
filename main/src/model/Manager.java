@@ -33,6 +33,7 @@ public class Manager extends Employee {
     }
 
 
+
     public String workHard() {
         return "Helping the idol!";
     }
@@ -43,7 +44,7 @@ public class Manager extends Employee {
 
     public String teachDancemove() {
 
-        return "teaching dance move";
+        return "Teach dance move!";
     }
 
     public int getNumberGroup() {
@@ -58,6 +59,12 @@ public class Manager extends Employee {
                 getNumberGroup();
     }
 
+    // hier wordt gecheckt of employee een instance van manager is
+    // als het een manager is wordt de employee een manager
+    // vervolgens wordt er gekeken hoe veel groepen een manager managed
+    // vervolgens worden de twee managers vergeleken en
+    // bepaald welke manager de beste is
+    // bij false kunnen ze niet vergeleken worden of de manager is niet beter dan de andere
     public boolean compare(Employee emp) {
         if (emp instanceof Manager) {
             Manager man = (Manager) emp; //castof
@@ -66,3 +73,4 @@ public class Manager extends Employee {
         return false;
     }
 }
+

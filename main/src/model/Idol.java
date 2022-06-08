@@ -132,7 +132,7 @@ public class Idol extends Employee {
 
     @Override
     public String toString() {
-        final String positon = "Position: \t" ;
+        final String positon = "Position: \t";
         final String idolInGroup = "Idol in group\n";
 
         if (dance
@@ -166,5 +166,21 @@ public class Idol extends Employee {
         }
         return super.toString();
     }
+
+    public double salaryCalculator(double profit) {
+        return salary.apply(profit);
+    }
+
+    public void salaryRaise() {
+        //salaris wordt verhoogd
+        //
+        try {
+            salary = salary.andThen(a -> 3 * a);
+        } catch (Exception e) {
+            System.out.println("Exception thrown "
+                    + "while passing null: "
+                    + e);}
+    }
 }
+
 
