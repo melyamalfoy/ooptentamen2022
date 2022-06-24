@@ -600,7 +600,7 @@ import model.Managercollection;
  8. idols en managers kunnen gebruik maken van Workhard();
 */
 
-public class Main {
+public class maincode.Main {
     public static void main(String[] args) {
 
 
