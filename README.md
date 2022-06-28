@@ -79,32 +79,9 @@ abstract class Medium <<abstract>> {
 ```
 Plaats hier het resultaat van git log --pretty=format:"%hx %ad%x09%s" --date=short`
 ```
-Code is werkend en af. Todo: Readme invullen en comments plaatsen. Melanie 36 minutes ago
-SonarLint issues aangepakt. Melanie 31/03/2022 18:55
-met SonarLint gewerkt aan de code volgens HBO-ICT-conventions op te kunnen leveren. Melanie 31/03/2022 15:09
-README.md code snippets toegevoegd. Melanie 31/03/2022 14:51
-changed employee Melanie 31/03/2022 14:38
-Cast wordt gebruikt. Managercollection aangemaakt. Melanie 31/03/2022 14:37
-ALle klasse werkend. Testcode geschreven. Melanie 31/03/2022 12:15
-changed employee Melanie 31/03/2022 11:02
-Manager class afgemaakt. Instanceoff toegevoegd. Melanie 30/03/2022 14:06
-changed employee Melanie 30/03/2022 12:58
-Idol class uitgewerkt. To String methode aangemaakt voor idol klasse. Return statements toegevoegd. Melanie 30/03/2022 11:26
-Interface uitgewerkt. Melanie 28/03/2022 21:51
-Twee subklassen aanwezig. Extra attributen en methoden voor subclasses. Melanie 28/03/2022 18:42
-Twee subklassen aanwezig. Extra attributen en methoden voor subclasses. Melanie 28/03/2022 17:29
-abstract class met abstract methode gemaakt. Melanie 28/03/2022 14:01
-abstract class met abstract methode gemaakt. Melanie 24/03/2022 14:03
-In jaar 1 heb ik voor programmeren een restaurant gemaakt in Python. Dit programma ga ik nu omzetten in Java. Interessant om de twee talen met elkaar te kunnen vergelijken. Melanie 21/03/2022 09:21
-Merge remote-tracking branch 'origin/main' into main Melanie 15/03/2022 11:44
-Merge remote-tracking branch 'origin/main' into main Melanie 15/03/2022 11:43
-Merge remote-tracking branch 'origin/main' into main Melanie 15/03/2022 11:43
-Merge remote-tracking branch 'origin/main' into main Melanie 15/03/2022 11:43
-opstart Melanie 10/02/2022 18:39
-java Melanie 10/02/2022 18:39
-Update README.md Melanie Egas 10/02/2022 18:35
+xxxxxxx
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen]
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/commits/main]
 
 ##### 2. Abstract class 'A' correct geïmplementeerd
 
@@ -157,7 +134,7 @@ public abstract class Employee {
 
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/target/classes/model/Manager.class](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 3. Subclass implementeert abstract class
 ##### subclass 1 Manager:
@@ -234,12 +211,13 @@ public class Manager extends Employee {
 ```
 
 #### subclass 2 idol:
-'''java
+
+```java
 
 package model;
 
-public class Idol extends Employee {
 
+public class Idol extends Employee {
     private boolean isLeader;
     private boolean inGroup;
     private String role;
@@ -255,7 +233,7 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
-    }
+    }``
 
     public Idol(boolean isLeader,
                 boolean inGroup,
@@ -408,9 +386,9 @@ public class Idol extends Employee {
 
 
 
-'''
+```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/target/classes/model/Idol.class](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 4. Interface correct geïmplementeerd. 
 
@@ -427,7 +405,7 @@ interface GroupInterface { //empty behaviour
 
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamenhttps://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/target/classes/model/GroupInterface.class](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 5. Er is een klasse aanwezig met minimaal twee constructors 
 Klas Employee heeft 2 constructors
@@ -508,28 +486,27 @@ public class Group implements GroupInterface {
 }
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Group.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 6. `super` key gebruikt voor aanroep constructor
 
 ```java
-public Idol(String name,
-        int dateOfBirth,
-        int dateStartOfContract) {
-        super(name,
-        dateOfBirth,
-        dateStartOfContract);
-        isLeader = false;
-        inGroup = false;
-        role = "None";
-        dance = false;
-        rap = false;
-        vocal = "vocal";
+public Idol(){
+        super();
+        isLeader=false;
+        inGroup=false;
+        role="None";
+        dance=false;
+        rap=false;
+        vocal="vocal";
+        this.salaryIncrease=(increase)->this.salary*increase;
+        this.salary=100;
         }
+
 
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Idol.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 7. `super` key gebruikt voor aanroep methode
 
@@ -544,7 +521,7 @@ public String toString() {
         
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamenhttps://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Group.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 8. `instanceof` aangetoond
 
@@ -559,7 +536,7 @@ public boolean compare(Employee emp) {
         }
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Manager.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 9. cast gebruikt voor gebruik van classe-specifieke methodes
 
@@ -574,7 +551,7 @@ public boolean compare(Employee emp) {
         }
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Manager.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 10. Er is testcode aanwezig om de punten hierboven te demonstreren. (Als je ook OOP2 doet: gebruik testcode-voorwaarden van OOP2)
 
@@ -709,7 +686,7 @@ public class maincode.Main {
 
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen]
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/Main.java][https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen]
 
 ##### 11. Classes en methodes zijn voldoen aan HBO-ICT coding standards
 
