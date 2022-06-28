@@ -10,7 +10,8 @@ public class Idol extends Employee {
     private boolean rap;
     private boolean dance;
     private String vocal;
-    private Function<Double, Double> salary;
+    private double salary;
+    private Function<Double, Double> salaryIncrease;
 
     public Idol() {
         super();
@@ -20,7 +21,8 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
-        salary = a -> 100 + a * 0.3;
+        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salary = 100;
     }
 
     public Idol(boolean isLeader,
@@ -36,7 +38,8 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
-        salary = a -> 100 + a * 0.3;
+        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salary = 100;
     }
 
     public Idol(String name,
@@ -51,7 +54,8 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
-        salary = a -> 100 + a * 0.3;
+        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salary = 100;
     }
 
 
@@ -75,7 +79,8 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
-        salary = a -> 100 + a * 0.3;
+        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salary = 100;
     }
 
     public boolean getLeader() {
@@ -174,20 +179,16 @@ public class Idol extends Employee {
         return super.toString();
     }
 
-    public double salaryCalculator(double profit) {
-        return salary.apply(profit);
+    public double salaryCalculator(double increase) throws InvalidSalaryIncreaseException {
+        if (increase < 0)
+            throw new InvalidSalaryIncreaseException();
+        return salaryIncrease.apply(increase);
     }
 
-    public void salaryRaise() {
-        //salaris wordt verhoogd
-        //
-        try {
-            salary = salary.andThen(a -> 3 * a);
-        } catch (Exception e) {
-            System.out.println("Exception thrown "
-                    + "while passing null: "
-                    + e);}
+    public double getSalary() {
+        return this.salary;
     }
+
 
 }
 

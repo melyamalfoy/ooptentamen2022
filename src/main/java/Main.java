@@ -1,14 +1,12 @@
 import io.javalin.Javalin;
-import model.Group;
-import model.Idol;
-import model.Manager;
-import model.Managercollection;
+import model.*;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Javalin app = Javalin.create().start(3412);
         app.get("/", ctx -> ctx.result("Hello World"));
-
 
 
         Manager manager = new Manager("Fernando",
@@ -113,19 +111,27 @@ public class Main {
                     + " manages more idol groups than "
                     + m2.getName());
         }
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("How much do you want to increase the salary?");
-//        double profit = sc.nextDouble();
-//        System.out.println("2021 Salary");
-//       System.out.println(hoseok.salaryCalculator(profit));
-//        hoseok.salaryRaise();
-//        System.out.println("2022 Salary");
-//       System.out.println(hoseok.salaryCalculator(profit));
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How much do you want to increase the salary?");
+        double profit = sc.nextDouble();
+        System.out.println("2021 Salary");
+        System.out.println(hoseok.getSalary());
 
-        m1.create_song(9); //want user to give the imput for the song
+
+        //hoseok.salaryRaise();
+        System.out.println("2022 Salary");
+        try {
+            System.out.println(hoseok.salaryCalculator(profit));
+        } catch (InvalidSalaryIncreaseException e) {
+            //trycatch
+            System.out.println(e.getMessage());
+
+        }
+
+        m1.create_song(3); //want user to give the imput for the song
         System.out.println();
         System.out.println(m1.showSong());
-  }
+    }
 
 
 }
