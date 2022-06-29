@@ -1,11 +1,10 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import model.Manager;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import model.Manager;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ManagerTest { //comparetest
+class ManagerTest { //comparetest
     Manager manager;
 
     public ManagerTest() {

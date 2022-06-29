@@ -40,19 +40,21 @@ public class Manager extends Employee {
     }
 
 
-
     public String workHard() {
         return "Helping the idol!";
     }
 
     public String teachNewSong() {
-        String s = "Teaching new song";
+        String s;
+        s = "Teaching new song";
         return s;
     }
 
     public String teachDancemove() {
 
-        return "Teach dance move!";
+        String s;
+        s = "Teach dance move!";
+        return s;
     }
 
     public int getNumberGroup() {
@@ -74,39 +76,41 @@ public class Manager extends Employee {
     // bepaald welke manager de beste is
     // bij false kunnen ze niet vergeleken worden of de manager is niet beter dan de andere
     public boolean compare(Employee emp) {
-        if (emp instanceof Manager) {
-            Manager man = (Manager) emp; //castof
-            return man.getNumberGroup() > numberGroup;
+        if (!(emp instanceof Manager)) {
+            return false;
         }
-        return false;
+        Manager man = (Manager) emp; //castof
+        return man.getNumberGroup() > numberGroup;
     }
+
 
     //de lijst met woorden voor het liedje, deze lijst wordt door de manager random gebruikt om een liedje
     // samen te stellen. In het Koreaans maakt de woordvolgorde in een zin niet uit.
-    public void create_song(int l) {
+    public void createSong(int l) {
         List<String> s = Arrays.asList(
                 "가자", " 내", "피", " 땀", "눈물도몸", "마음", "영혼도",
                 "회망", "머리", "머리", "처음", "처음", "하루", "몰라",
-                "가자", "내", "피", "땀", "눈물도몸", "마음", "영혼도",
-                "회망", "몰라", "하루");
+                "가자", "내", "피", "땀", "눈물도몸", "마음", "회망",
+                "영혼도", "몰라", "하루");
         Random rand = new Random();
 
-// This function returns a random value.
 
-                Supplier<Integer> randomValue = () -> rand.nextInt((s.size() + 1));
-                for(int i=0; i<l;i++){
-                    newSong.add(s.get(randomValue.get()));
-                }
+// This util.function returns a random value for the creation of a song
+
+        var randomValue = (Supplier<Integer>) () -> rand.nextInt((s.size() + 1));
+        for (int i = 0; i < l; i++) {
+            newSong.add(s.get(randomValue.get()));
+        }
     }
 
     public List<String> getSong() {
         return newSong;
     }
 
-    public String showSong(){
-        String show="";
-        for(int i=0;i<newSong.size();i++){
-            show = show + newSong.get(i)+" ";
+    public String showSong() {
+        String show = "";
+        for (int i = 0; i < newSong.size(); i++) {
+            show = show + newSong.get(i) + " ";
         }
         return show;
     }

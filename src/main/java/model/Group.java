@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Group implements GroupInterface {
     public ArrayList<Idol> groupList;
     private Manager manager;
-    private String groupName;
+    private final String groupName;
 
     public Group() {
         groupList = new ArrayList();
@@ -63,7 +63,7 @@ public class Group implements GroupInterface {
         return "We don't need permission to dance!";
     }
 
-    public void Training() {
+    public void training() {
         for (Idol id : groupList) {
             System.out.println(id.workHard());
         }
@@ -82,7 +82,8 @@ public class Group implements GroupInterface {
     }
 
 
-    //is the idol a adancer and check who is the Optional<Idol> gest (min)
+    //Maknae is the youngest one of the group who isn't a dancer. filter is an intermediate
+    // stream that checks 
     public Idol maknae() {
         return groupList.stream()
                 .filter(x -> x.isDance() == false) // .filter is intermediate

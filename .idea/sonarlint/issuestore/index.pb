@@ -207,5 +207,3 @@ b
 2.idea/libraries/Maven__org_yaml_snakeyaml_1_24.xml,e\f\efd1f427d7a5be5e6c56653a43a4df2c97db9b1b
 h
 8.idea/libraries/Maven__org_webjars_swagger_ui_3_25_2.xml,3\e\3ebd662a5945a97bf1afe384e305b3d099f32bb3
-Z
-*src/main/java/model/Managercollection.java,8\8\88e1012c94f5ab9cd3010d8dd2b6e27852bda15a

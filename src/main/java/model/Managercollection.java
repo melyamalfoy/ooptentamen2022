@@ -1,41 +1,42 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Managercollection implements GroupInterface {
     private final ArrayList<Manager> managers;
 
-    public Managercollection(){
+    public Managercollection() {
 
-        managers = new ArrayList<Manager>();
-    }
-    public Managercollection(ArrayList<Manager> managers){
-
-        this.managers = managers;
+        managers = new ArrayList<>();
     }
 
-    public void addManager(Manager manager){
+    public Managercollection(List<Manager> managers) {
+
+        this.managers = (ArrayList<Manager>) managers;
+    }
+
+    public void addManager(Manager manager) {
 
         managers.add(manager);
     }
 
-    public boolean removeManager(Manager manager){
+    public boolean removeManager(Manager manager) {
 
         if (!managers.isEmpty()) {
             managers.remove(manager);
             return true;
         }
-        return false;}
+        return false;
+    }
 
-    public String toString(){
+    public String toString() {
 
-        String information= "List of managers in the company: \n";
-        for(Manager man : managers){
-            information = information
-                    + man.toString()+"\n";
-        }
+        String information = "List of managers in the company: \n";
+        for (Manager man : managers)
+            information = new StringBuilder().append(information).append(man.toString()).append("\n").toString();
 
-    return information;
+        return information;
     }
 
     @Override

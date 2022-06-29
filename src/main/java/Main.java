@@ -9,7 +9,6 @@ import static java.lang.System.out;
 public class Main {
     public static void main(String[] args) {
         Javalin app = Javalin.create().start(3412);
-        GroupController gc = new GroupController();
 
         Manager manager = new Manager("Fernando",
                 2008,
@@ -102,7 +101,7 @@ public class Main {
         app.put("/idols", ctx -> GroupController.create(ctx, g));
 
 
-        m1.create_song(3); //want user to give the imput for the song
+        m1.createSong(3); //want user to give the imput for the song
         out.println("The manager wrote the following title for the next song: ");
         out.println(m1.showSong());
 

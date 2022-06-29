@@ -77,9 +77,18 @@ abstract class Medium <<abstract>> {
 ##### 1. Het commando `git log --pretty=format:"%hx %ad%x09%s" --date=short` bevat inzichtelijke atomaire commits op.
 
 ```
-Plaats hier het resultaat van git log --pretty=format:"%hx %ad%x09%s" --date=short`
+1d30a0ex 2022-06-29     Extra stream, tests en Javalin toegevoegd
+48d156cx 2022-06-29     Stream en stream test afgemaakt
+20d8835x 2022-06-28     Links naar bewijs OOP1 toegevoegd
+8bd150fx 2022-06-28     1e util function nuttig en correct geimplementeerd en een custom exception gedefineeerd
+3557f06x 2022-06-28     Javalin is werkzaam Classes opgeruimd
+d6a1e98x 2022-06-24     javalin
+132af2bx 2022-06-08     2 functionele interfaces
+c52591cx 2022-06-08     Updated employee class.
+8691d28x 2022-06-08     2 functionele interfaces
+e877b18x 2022-04-07     Update README.md
+a7f16ecx 2022-04-07     Update README.md
 ```
-xxxxxxx
 
 Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/commits/main]
 

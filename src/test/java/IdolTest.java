@@ -1,12 +1,11 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import model.Idol;
+import model.InvalidSalaryIncreaseException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import model.Idol;
-import model.InvalidSalaryIncreaseException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IdolTest {
     Idol iu;
@@ -28,7 +27,7 @@ class IdolTest {
         String expected = "Sorry not a dancer!";
         String actual = iu.dance();
 
-        Assertions.assertTrue(expected.compareTo(actual) == 0);
+        assertEquals(0, expected.compareTo(actual));
     }
 
     @Test
@@ -58,7 +57,7 @@ class IdolTest {
                 + "2016";
         String actual = iu.toString();
 
-        Assertions.assertTrue(expected.compareTo(actual) == 0);
+        assertEquals(0, expected.compareTo(actual));
     }
 
     @ParameterizedTest(name = "#{index} - Test with Argument={0}")
