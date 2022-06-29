@@ -83,7 +83,7 @@ public class Group implements GroupInterface {
 
 
     //Maknae is the youngest one of the group who isn't a dancer. filter is an intermediate
-    // stream that checks 
+    // stream that checks who's the maknae of a group
     public Idol maknae() {
         return groupList.stream()
                 .filter(x -> x.isDance() == false) // .filter is intermediate

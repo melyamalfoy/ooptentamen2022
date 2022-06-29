@@ -77,6 +77,7 @@ abstract class Medium <<abstract>> {
 ##### 1. Het commando `git log --pretty=format:"%hx %ad%x09%s" --date=short` bevat inzichtelijke atomaire commits op.
 
 ```
+6082024x 2022-06-29     Code nagelopen met SonarLint aangepast waar nodig en mogelijk
 1d30a0ex 2022-06-29     Extra stream, tests en Javalin toegevoegd
 48d156cx 2022-06-29     Stream en stream test afgemaakt
 20d8835x 2022-06-28     Links naar bewijs OOP1 toegevoegd
@@ -87,7 +88,7 @@ d6a1e98x 2022-06-24     javalin
 c52591cx 2022-06-08     Updated employee class.
 8691d28x 2022-06-08     2 functionele interfaces
 e877b18x 2022-04-07     Update README.md
-a7f16ecx 2022-04-07     Update README.md
+
 ```
 
 Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/commits/main]
@@ -564,6 +565,7 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 
 ##### 10. Er is testcode aanwezig om de punten hierboven te demonstreren. (Als je ook OOP2 doet: gebruik testcode-voorwaarden van OOP2)
 
+Testcode OOP2 zie bij OOP2
 ```java
 package maincode;
 
@@ -782,34 +784,98 @@ Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-j
 ##### 4. Custom Exception "E" wordt gebruikt via een `throws` constructie.
 
 ```
-Plaats hier je code snippets
+
+    public void salaryCalculator(double increase) throws InvalidSalaryIncreaseException {
+        if (increase < 0)
+            throw new InvalidSalaryIncreaseException();
+        this.salary = salaryIncrease.apply(increase);
+    }
+
+    public double getSalary() {
+        return this.salary;
+    }
+
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Idol.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 5. Custom Exception "E" wordt gebruikt via een `catch` constructie
 
 ```
-Plaats hier je code snippets
+     try (Scanner sc = new Scanner(in)) {
+            out.println("Increase the salary of an idolgroup. Please enter a number to multipy the 2021 salary with:  ");
+            double profit = sc.nextDouble();
+            out.println("2021 Salary");
+            out.println(g.getGroupMembers().get(0).getSalary());  //get the salary of the first member (they all have the same salary)
+
+            out.println("2022 Salary");
+            try {
+                for (Idol idol : g.getGroupMembers()) {
+                    idol.salaryCalculator(profit);
+                }
+
+                out.println(g.getGroupMembers().get(0).getSalary());
+
+            } catch (InvalidSalaryIncreaseException e) {
+                //trycatch
+                out.println(e.getMessage());
+
+            }
+        }
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/Main.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 6. Minimaal 1 `intermediate operation` op een stream
 
-```
-Plaats hier je code snippets
+eerste intermediate operation
+
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+    //Maknae is the youngest one of the group who isn't a dancer. filter is an intermediate
+    // stream that checks who's the maknae of a group
+    public Idol maknae() {
+        return groupList.stream()
+                .filter(x -> x.isDance() == false) // .filter is intermediate
+                .min((a, b) -> a.compareTo(b))
+                .get();  //.min is terminal stream
+    }
+
+```
+
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Group.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
+
+tweede intermediate stream
+
+```
+   @Test
+    void leaveGroupTest(){
+        group.leaveGroup("Lisa");
+        List<Idol> result = group.getGroupMembers().stream()
+                                                        .filter(e -> e.getName().compareTo("Lisa") == 0)
+                                                        .toList();
+        
+        assertTrue(result.isEmpty());
+    }
+```
+
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Group.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 7. Minimaal 1 `terminal operation` op een stream
 
 ```
-Plaats hier je code snippets
+
+    //Maknae is the youngest one of the group who isn't a dancer. filter is an intermediate
+    // stream that checks who's the maknae of a group
+    public Idol maknae() {
+        return groupList.stream()
+                .filter(x -> x.isDance() == false) // .filter is intermediate
+                .min((a, b) -> a.compareTo(b))
+                .get();  //.min is terminal stream
+    }
 ```
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Group.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 8. Testcode met 100% code coverage
 
