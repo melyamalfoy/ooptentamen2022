@@ -83,6 +83,24 @@ public class Idol extends Employee {
         this.salary = 100;
     }
 
+
+    public Idol(boolean isLeader,
+                boolean inGroup,
+                String role,
+                boolean rap,
+                String vocal,
+                boolean dance, double salary) {
+        super();
+        this.isLeader = isLeader;
+        this.inGroup = inGroup;
+        this.role = role;
+        this.rap = rap;
+        this.vocal = vocal;
+        this.dance = dance;
+        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salary = salary;
+    }
+
     public boolean getLeader() {
 
         return isLeader;
@@ -189,6 +207,17 @@ public class Idol extends Employee {
         return this.salary;
     }
 
+
+    //tells how to compare the idols in the stream
+    public int compareTo(Object o) {
+        Idol idol = (Idol) o;
+        if (idol.getDateOfBirth() < this.getDateOfBirth())
+            return -1;
+        else if (idol.getDateOfBirth() == this.getDateOfBirth())
+            return 0;
+        else
+            return 1;
+    }
 
 }
 

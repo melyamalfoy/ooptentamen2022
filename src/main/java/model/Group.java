@@ -30,6 +30,9 @@ public class Group implements GroupInterface {
 
     }
 
+    public ArrayList<Idol> getGroupMembers() {
+        return this.group;
+    }
 
     public void joinGroup(Idol idol) {
         group.add(idol);
@@ -66,4 +69,16 @@ public class Group implements GroupInterface {
         }
         return information;
     }
+
+
+    //is the idol a adancer and check who is the Optional<Idol> gest (min)
+    public Idol maknae() {
+        return group.stream()
+                .filter(x -> x.isDance() == false) // .filter is intermediate
+                .min((a, b) -> a.compareTo(b))
+                .get();  //.min is terminal stream
+
+
+    }
+
 }

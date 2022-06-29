@@ -6,7 +6,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Javalin app = Javalin.create().start(3412);
+        Double salary = new Double(0.0f);
+
         app.get("/", ctx -> ctx.result("Hello World"));
+
+        app.get("/idols", ctx -> ctx.json(salary));
+
+        System.out.println(salary);
 
 
         Manager manager = new Manager("Fernando",
@@ -45,8 +51,6 @@ public class Main {
                 true
         );
 
-        app.get("/idols", ctx -> ctx.result(hoseok.getName()));
-
         Idol jinseok = new Idol("Jinseok",
                 1991,
                 2015,
@@ -60,29 +64,28 @@ public class Main {
 
 
         Group g = new Group(manager, "BTS");
-        System.out.println(jungkook.dance());
+        //       System.out.println(jungkook.dance());
         g.joinGroup(jungkook);
-        System.out.println(namjoon.rap());
+        //     System.out.println(namjoon.rap());
         g.joinGroup(namjoon);
-        System.out.println(hoseok.dance());
-        System.out.println(hoseok.sing());
+        //   System.out.println(hoseok.dance());
+        // System.out.println(hoseok.sing());
         g.joinGroup(hoseok);
-        System.out.println(jinseok.sing());
+        //     System.out.println(jinseok.sing());
         g.joinGroup(jinseok);
         System.out.print(g);
         System.out.println(g.performance());
         if (g.leaveGroup(jungkook)) {
             System.out.println(jungkook.getName() + " removed!");
         }
-        System.out.println(g);
-        System.out.println(g.performance());
-        System.out.println(jungkook.workHard());
-        System.out.println(manager.workHard());
-        System.out.println(manager.teachDancemove());
+        //     System.out.println(g);
+        //   System.out.println(g.performance());
+        // // System.out.println(jungkook.workHard());
+        // System.out.println(manager.workHard());
+        // System.out.println(manager.teachDancemove());
 
 
-
-        System.out.println("List of Managers");
+        //     System.out.println("List of Managers");
         Manager m1 = new Manager("Carlos",
                 2010,
                 1991,
@@ -99,36 +102,40 @@ public class Main {
         collect.addManager(m1);
         collect.addManager(m2);
         collect.addManager(m3);
-        System.out.println(collect);
-        System.out.println(m3.teachNewSong());
+        //    System.out.println(collect);
+        //    System.out.println(m3.teachNewSong());
 
-        if (m1.compare(m2)) {
-            System.out.println(m2.getName()
-                    + " manages more idol groups than "
-                    + m1.getName());
-        } else {
-            System.out.println(m1.getName()
-                    + " manages more idol groups than "
-                    + m2.getName());
+        // if (m1.compare(m2)) {
+        //     System.out.println(m2.getName()
+        //             + " manages more idol groups than "
+        //             + m1.getName());
+        // } else {
+        //     System.out.println(m1.getName()
+        //             + " manages more idol groups than "
+        //             + m2.getName());
+        // }
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("How much do you want to increase the salary?");
+            double profit = sc.nextDouble();
+            System.out.println("2021 Salary");
+            System.out.println(hoseok.getSalary());
+
+            //hoseok.salaryRaise();
+            System.out.println("2022 Salary");
+            try {
+                for (Idol idol : g.getGroupMembers()) {
+                    idol.salaryCalculator(profit);
+                }
+
+                System.out.println(hoseok.getSalary());
+                app.post("/idols", ctx -> ctx.result(hoseok.getSalary() + ""));
+            } catch (InvalidSalaryIncreaseException e) {
+                //trycatch
+                System.out.println(e.getMessage());
+
+            }
         }
-        Scanner sc = new Scanner(System.in);
-        System.out.println("How much do you want to increase the salary?");
-        double profit = sc.nextDouble();
-        System.out.println("2021 Salary");
-        System.out.println(hoseok.getSalary());
-
-
-        //hoseok.salaryRaise();
-        System.out.println("2022 Salary");
-        try {
-            System.out.println(hoseok.salaryCalculator(profit));
-        } catch (InvalidSalaryIncreaseException e) {
-            //trycatch
-            System.out.println(e.getMessage());
-
-        }
-
-        m1.create_song(3); //want user to give the imput for the song
+        m1.create_song(5); //want user to give the imput for the song
         System.out.println();
         System.out.println(m1.showSong());
     }
