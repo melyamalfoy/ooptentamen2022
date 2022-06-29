@@ -2,8 +2,8 @@ package model;
 
 public abstract class Employee {
     private String name;
-    private int dateOfBirth;
-    private int dateStartOfContract;
+    private final int dateOfBirth;
+    private final int dateStartOfContract;
 
     protected Employee() {
         name = "no name";

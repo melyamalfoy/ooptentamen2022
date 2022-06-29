@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class GroupsDB {
-    private static Map<Integer, Group> groups = new HashMap<>();
-    private static AtomicInteger lastId;
+    private static final Map<Integer, Group> groups = new HashMap<>();
+    private static final AtomicInteger lastId;
 
     static {
         Group g1 = new Group("Blackpink");

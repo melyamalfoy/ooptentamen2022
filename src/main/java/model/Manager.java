@@ -7,8 +7,8 @@ import java.util.function.Supplier;
 import java.util.Random;
 
 public class Manager extends Employee {
-    private int numberGroup;
-    private List<String> newSong = new ArrayList<>();
+    private final int numberGroup;
+    private final List<String> newSong = new ArrayList<>();
 
     public Manager() {
         super();
