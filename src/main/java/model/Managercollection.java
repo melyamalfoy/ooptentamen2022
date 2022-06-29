@@ -21,7 +21,7 @@ public class Managercollection implements GroupInterface {
 
     public boolean removeManager(Manager manager){
 
-        if(managers.isEmpty()){
+        if (!managers.isEmpty()) {
             managers.remove(manager);
             return true;
         }

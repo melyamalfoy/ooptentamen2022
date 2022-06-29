@@ -3,23 +3,24 @@ import model.*;
 
 import java.util.Scanner;
 
+import static java.lang.System.in;
+import static java.lang.System.out;
+
 public class Main {
     public static void main(String[] args) {
         Javalin app = Javalin.create().start(3412);
-        Double salary = new Double(0.0f);
-
-        app.get("/", ctx -> ctx.result("Hello World"));
-
-        app.get("/idols", ctx -> ctx.json(salary));
-
-        System.out.println(salary);
-
+        GroupController gc = new GroupController();
 
         Manager manager = new Manager("Fernando",
                 2008,
                 1990,
                 5);
-        Idol jungkook = new Idol("Jungkook",
+
+        Group g = new Group(manager, "BTS");
+
+        app.get("/idols", GroupController::getAll);
+
+        g.joinGroup(new Idol("Jungkook",
                 1993,
                 2015,
                 false,
@@ -28,8 +29,8 @@ public class Main {
                 true,
                 "lalala",
                 true
-        );
-        Idol namjoon = new Idol("Namjoon",
+        ));
+        g.joinGroup(new Idol("Namjoon",
                 1993,
                 2015,
                 true,
@@ -38,9 +39,8 @@ public class Main {
                 true,
                 "lalala",
                 false
-        );
-
-        Idol hoseok = new Idol("Hoseok",
+        ));
+        g.joinGroup(new Idol("Hoseok",
                 1992,
                 2015,
                 false,
@@ -49,9 +49,8 @@ public class Main {
                 true,
                 "rapraprap",
                 true
-        );
-
-        Idol jinseok = new Idol("Jinseok",
+        ));
+        g.joinGroup(new Idol("Jinseok",
                 1991,
                 2015,
                 false,
@@ -60,32 +59,8 @@ public class Main {
                 false,
                 "ladieladieda",
                 false
-        );
+        ));
 
-
-        Group g = new Group(manager, "BTS");
-        //       System.out.println(jungkook.dance());
-        g.joinGroup(jungkook);
-        //     System.out.println(namjoon.rap());
-        g.joinGroup(namjoon);
-        //   System.out.println(hoseok.dance());
-        // System.out.println(hoseok.sing());
-        g.joinGroup(hoseok);
-        //     System.out.println(jinseok.sing());
-        g.joinGroup(jinseok);
-        System.out.print(g);
-        System.out.println(g.performance());
-        if (g.leaveGroup(jungkook)) {
-            System.out.println(jungkook.getName() + " removed!");
-        }
-        //     System.out.println(g);
-        //   System.out.println(g.performance());
-        // // System.out.println(jungkook.workHard());
-        // System.out.println(manager.workHard());
-        // System.out.println(manager.teachDancemove());
-
-
-        //     System.out.println("List of Managers");
         Manager m1 = new Manager("Carlos",
                 2010,
                 1991,
@@ -102,47 +77,39 @@ public class Main {
         collect.addManager(m1);
         collect.addManager(m2);
         collect.addManager(m3);
-        //    System.out.println(collect);
-        //    System.out.println(m3.teachNewSong());
 
-        // if (m1.compare(m2)) {
-        //     System.out.println(m2.getName()
-        //             + " manages more idol groups than "
-        //             + m1.getName());
-        // } else {
-        //     System.out.println(m1.getName()
-        //             + " manages more idol groups than "
-        //             + m2.getName());
-        // }
-        try (Scanner sc = new Scanner(System.in)) {
-            System.out.println("How much do you want to increase the salary?");
+        try (Scanner sc = new Scanner(in)) {
+            out.println("Increase the salary of an idolgroup. Please enter a number to multipy the 2021 salary with:  ");
             double profit = sc.nextDouble();
-            System.out.println("2021 Salary");
-            System.out.println(hoseok.getSalary());
+            out.println("2021 Salary");
+            out.println(g.getGroupMembers().get(0).getSalary());  //get the salary of the first member (they all have the same salary)
 
-            //hoseok.salaryRaise();
-            System.out.println("2022 Salary");
+            out.println("2022 Salary");
             try {
                 for (Idol idol : g.getGroupMembers()) {
                     idol.salaryCalculator(profit);
                 }
 
-                System.out.println(hoseok.getSalary());
-                app.post("/idols", ctx -> ctx.result(hoseok.getSalary() + ""));
+                out.println(g.getGroupMembers().get(0).getSalary());
+
             } catch (InvalidSalaryIncreaseException e) {
                 //trycatch
-                System.out.println(e.getMessage());
+                out.println(e.getMessage());
 
             }
         }
-        m1.create_song(5); //want user to give the imput for the song
-        System.out.println();
-        System.out.println(m1.showSong());
+
+        app.put("/idols", ctx -> GroupController.create(ctx, g));
+
+
+        m1.create_song(3); //want user to give the imput for the song
+        out.println("The manager wrote the following title for the next song: ");
+        out.println(m1.showSong());
+
     }
 
 
 }
-
 
 
 

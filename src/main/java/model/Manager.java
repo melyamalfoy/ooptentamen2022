@@ -46,7 +46,8 @@ public class Manager extends Employee {
     }
 
     public String teachNewSong() {
-        return "Teaching new song";
+        String s = "Teaching new song";
+        return s;
     }
 
     public String teachDancemove() {

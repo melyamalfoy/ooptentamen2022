@@ -4,14 +4,14 @@ import java.util.function.Function;
 
 public class Idol extends Employee {
 
-    private boolean isLeader;
+    private final boolean isLeader;
     private boolean inGroup;
-    private String role;
-    private boolean rap;
-    private boolean dance;
-    private String vocal;
+    private final String role;
+    private final boolean rap;
+    private final boolean dance;
+    private final String vocal;
     private double salary;
-    private Function<Double, Double> salaryIncrease;
+    private final Function<Double, Double> salaryIncrease;
 
     public Idol() {
         super();
@@ -21,7 +21,7 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
-        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salaryIncrease = this::apply;
         this.salary = 100;
     }
 
@@ -38,7 +38,7 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
-        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salaryIncrease = increase -> this.salary * increase;
         this.salary = 100;
     }
 
@@ -54,7 +54,7 @@ public class Idol extends Employee {
         dance = false;
         rap = false;
         vocal = "vocal";
-        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salaryIncrease = (Double increase) -> this.salary * increase;
         this.salary = 100;
     }
 
@@ -79,7 +79,7 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
-        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salaryIncrease = increase -> this.salary * increase;
         this.salary = 100;
     }
 
@@ -97,18 +97,8 @@ public class Idol extends Employee {
         this.rap = rap;
         this.vocal = vocal;
         this.dance = dance;
-        this.salaryIncrease = (increase) -> this.salary * increase;
+        this.salaryIncrease = this::apply2;
         this.salary = salary;
-    }
-
-    public boolean getLeader() {
-
-        return isLeader;
-    }
-
-    public boolean getInGroup() {
-
-        return inGroup;
     }
 
     public void setInGroup(boolean inGroup) {
@@ -155,10 +145,6 @@ public class Idol extends Employee {
         return dance;
     }
 
-    public String getVocal() {
-
-        return vocal;
-    }
 
     @Override
     public String toString() {
@@ -197,10 +183,10 @@ public class Idol extends Employee {
         return super.toString();
     }
 
-    public double salaryCalculator(double increase) throws InvalidSalaryIncreaseException {
+    public void salaryCalculator(double increase) throws InvalidSalaryIncreaseException {
         if (increase < 0)
             throw new InvalidSalaryIncreaseException();
-        return salaryIncrease.apply(increase);
+        this.salary = salaryIncrease.apply(increase);
     }
 
     public double getSalary() {
@@ -211,14 +197,16 @@ public class Idol extends Employee {
     //tells how to compare the idols in the stream
     public int compareTo(Object o) {
         Idol idol = (Idol) o;
-        if (idol.getDateOfBirth() < this.getDateOfBirth())
-            return -1;
-        else if (idol.getDateOfBirth() == this.getDateOfBirth())
-            return 0;
-        else
-            return 1;
+        return Integer.compare(idol.getDateOfBirth(), this.getDateOfBirth());
     }
 
+    private Double apply(Double increase) {
+        return this.salary * increase;
+    }
+
+    private Double apply2(Double increase) {
+        return this.salary * increase;
+    }
 }
 
 

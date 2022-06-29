@@ -3,20 +3,28 @@ package model;
 import java.util.ArrayList;
 
 
+
 public class Group implements GroupInterface {
-    private ArrayList<Idol> group;
+    public ArrayList<Idol> groupList;
     private Manager manager;
     private String groupName;
 
     public Group() {
-        group = new ArrayList();
+        groupList = new ArrayList();
         manager = new Manager();
         groupName = "None";
 
     }
 
+    public Group(String name) {
+        groupList = new ArrayList();
+        manager = new Manager();
+        groupName = name;
+
+    }
+
     public Group(Manager manager, String groupName) {
-        group = new ArrayList();
+        groupList = new ArrayList();
         this.manager = manager;
         this.groupName = groupName;
     }
@@ -26,34 +34,37 @@ public class Group implements GroupInterface {
                  Manager manager,
                  String groupName) {
         this(manager, groupName);
-        this.group = group;
-
+        this.groupList = group;
     }
 
     public ArrayList<Idol> getGroupMembers() {
-        return this.group;
+        return this.groupList;
     }
 
     public void joinGroup(Idol idol) {
-        group.add(idol);
+        groupList.add(idol);
     }
 
-    public boolean leaveGroup(Idol idol) {
-        if (group.isEmpty()) {
-            group.remove(idol);
-            return true;
-        }
-        return false;
+    public boolean leaveGroup(String name) {
+        if (groupList.isEmpty())
+            return false;
+
+        Idol idol = groupList.stream()
+                .filter(e -> e.getName().compareTo(name) == 0)
+                .toList()
+                .get(0);
+
+        groupList.remove(idol);
+        return true;
     }
 
     @Override
     public String performance() {
-
         return "We don't need permission to dance!";
     }
 
     public void Training() {
-        for (Idol id : group) {
+        for (Idol id : groupList) {
             System.out.println(id.workHard());
         }
     }
@@ -63,7 +74,7 @@ public class Group implements GroupInterface {
                 + manager.toString()
                 + "\n" + "Idols:\n";
 
-        for (Idol id : group) {
+        for (Idol id : groupList) {
             information = information + id.toString() +
                     "\n";
         }
@@ -73,12 +84,10 @@ public class Group implements GroupInterface {
 
     //is the idol a adancer and check who is the Optional<Idol> gest (min)
     public Idol maknae() {
-        return group.stream()
+        return groupList.stream()
                 .filter(x -> x.isDance() == false) // .filter is intermediate
                 .min((a, b) -> a.compareTo(b))
                 .get();  //.min is terminal stream
-
-
     }
 
 }
