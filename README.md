@@ -1,6 +1,6 @@
 # Kpop programma
 
-Voornaam: Melanie 
+Voornaam: Melanie
 
 Achternaam: Grimminck
 
@@ -9,6 +9,7 @@ Studentnummer: 500858352
 ### Inleiding
 
 Doel Kpop programma;
+
 1. kpop idols toevoegen en hun info toevoegen aan het programma
 2. managers van de groepen toevoegen
 3. kpop idols aan een groep toevoegen
@@ -25,7 +26,6 @@ Doel Kpop programma;
 https://lucid.app/lucidchart/b142287e-0925-4bf2-950e-3de9cdde1ec4/edit?invitationId=inv_0a48722b-0712-46d5-951e-0b8f39fc3772
 
 ![uml](MelanieGrimminckUML.png)
-
 
 ```puml
 @startuml
@@ -126,15 +126,15 @@ public abstract class Employee {
 
    public String getName() {
 
-        return name;
-    }
+      return name;
+   }
 
-    public int getDateOfBirth() {
-        return dateOfBirth;
-    }
+   public int getDateOfBirth() {
+      return dateOfBirth;
+   }
 
 
-    public int getDateStartOfContract() {
+   public int getDateStartOfContract() {
         return dateStartOfContract;
     }
 
@@ -149,6 +149,7 @@ public abstract class Employee {
 Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/target/classes/model/Manager.class](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 ##### 3. Subclass implementeert abstract class
+
 ##### subclass 1 Manager:
 
 ```java
@@ -159,16 +160,16 @@ public class Manager extends Employee {
 
    public Manager() {
       super();
-        numberGroup = 0;
-    }
+      numberGroup = 0;
+   }
 
 
-    public Manager(int numberGroup) {
-        super();
-        this.numberGroup = numberGroup;
-    }
+   public Manager(int numberGroup) {
+      super();
+      this.numberGroup = numberGroup;
+   }
 
-    public Manager(String name,
+   public Manager(String name,
                    int dateOfBirth,
                    int dateStartOfContract) {
         super(name,
@@ -257,16 +258,16 @@ public class Idol extends Employee {
       super();
       this.isLeader = isLeader;
       this.inGroup = inGroup;
-        this.role = role;
-        this.rap = rap;
-        this.vocal = vocal;
-        this.dance = dance;
-    }
+      this.role = role;
+      this.rap = rap;
+      this.vocal = vocal;
+      this.dance = dance;
+   }
 
-    public Idol(String name,
-                int dateOfBirth,
-                int dateStartOfContract) {
-        super(name,
+   public Idol(String name,
+               int dateOfBirth,
+               int dateStartOfContract) {
+      super(name,
                 dateOfBirth,
                 dateStartOfContract);
         isLeader = false;
@@ -361,8 +362,8 @@ public class Idol extends Employee {
 
     @Override
     public String toString() {
-        final String positon = "Position: \t" ;
-        final String idolInGroup = "Idol in group\n";
+       final String positon = "Position: \t";
+       final String idolInGroup = "Idol in group\n";
 
         if (dance
                 && rap
@@ -403,11 +404,9 @@ public class Idol extends Employee {
 
 Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/target/classes/model/Idol.class](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
-##### 4. Interface correct geïmplementeerd. 
+##### 4. Interface correct geïmplementeerd.
 
-Deze interface wordt gebruikt door 2 klasse
-1: Group
-2: Managercollection
+Deze interface wordt gebruikt door 2 klasse 1: Group 2: Managercollection
 
 ```java
 package model;
@@ -458,15 +457,15 @@ public class Group implements GroupInterface {
       this(manager, groupName);
       this.group = group;
 
-    }
+   }
 
 
-    public void joinGroup(Idol idol) {
-        group.add(idol);
-    }
+   public void joinGroup(Idol idol) {
+      group.add(idol);
+   }
 
-    public boolean leaveGroup(Idol idol) {
-        if (group.isEmpty()) {
+   public boolean leaveGroup(Idol idol) {
+      if (group.isEmpty()) {
             group.remove(idol);
             return true;
         }
@@ -525,13 +524,13 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 
 ```java
  @Override
-public String toString() {
+public String toString(){
 
-        return super.toString() + "\n"
-        + "Number of groups:\t" +
+        return super.toString()+"\n"
+        +"Number of groups:\t"+
         getNumberGroup();
         }
-        
+
 ```
 
 Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Group.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
@@ -540,10 +539,10 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 
 ```java
 
-public boolean compare(Employee emp) {
-        if (emp instanceof Manager) {
-        Manager man = (Manager) emp; //castof
-        return man.getNumberGroup() > numberGroup;
+public boolean compare(Employee emp){
+        if(emp instanceof Manager){
+        Manager man=(Manager)emp; //castof
+        return man.getNumberGroup()>numberGroup;
         }
         return false;
         }
@@ -555,10 +554,10 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 
 ```java
 
-public boolean compare(Employee emp) {
-        if (emp instanceof Manager) {
-        Manager man = (Manager) emp; //castof
-        return man.getNumberGroup() > numberGroup;
+public boolean compare(Employee emp){
+        if(emp instanceof Manager){
+        Manager man=(Manager)emp; //castof
+        return man.getNumberGroup()>numberGroup;
         }
         return false;
         }
@@ -569,6 +568,7 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 ##### 10. Er is testcode aanwezig om de punten hierboven te demonstreren. (Als je ook OOP2 doet: gebruik testcode-voorwaarden van OOP2)
 
 Testcode OOP2 zie bij OOP2
+
 ```java
 package maincode;
 
@@ -591,58 +591,58 @@ import model.Managercollection;
  8. idols en managers kunnen gebruik maken van Workhard();
 */
 
-public class maincode.Main {
-    public static void main(String[] args) {
+public class maincode.Main{
+public static void main(String[]args){
 
 
-        Manager manager = new Manager("Fernando",
-                2008,
-                1990,
-                5);
-        Idol jungkook = new Idol("Jungkook",
-                1993,
-                2015,
-                false,
-                true,
-                "front",
-                true,
-                "lalala",
-                false
+        Manager manager=new Manager("Fernando",
+        2008,
+        1990,
+        5);
+        Idol jungkook=new Idol("Jungkook",
+        1993,
+        2015,
+        false,
+        true,
+        "front",
+        true,
+        "lalala",
+        false
         );
-        Idol namjoon = new Idol("Namjoon",
-                1993,
-                2015,
-                true,
-                true,
-                "front",
-                true,
-                "lalala",
-                false
-        );
-
-        Idol hoseok = new Idol("Hoseok",
-                1992,
-                2015,
-                false,
-                true,
-                "left side",
-                true,
-                "rapraprap",
-                true
+        Idol namjoon=new Idol("Namjoon",
+        1993,
+        2015,
+        true,
+        true,
+        "front",
+        true,
+        "lalala",
+        false
         );
 
-        Idol jinseok = new Idol("Jinseok",
-                1991,
-                2015,
-                false,
-                true,
-                "right side",
-                false,
-                "ladieladieda",
-                false
+        Idol hoseok=new Idol("Hoseok",
+        1992,
+        2015,
+        false,
+        true,
+        "left side",
+        true,
+        "rapraprap",
+        true
         );
 
-        Group g = new Group(manager, "EXO");
+        Idol jinseok=new Idol("Jinseok",
+        1991,
+        2015,
+        false,
+        true,
+        "right side",
+        false,
+        "ladieladieda",
+        false
+        );
+
+        Group g=new Group(manager,"EXO");
         System.out.println(jungkook.dance());
         g.joinGroup(jungkook);
         System.out.println(namjoon.rap());
@@ -654,8 +654,8 @@ public class maincode.Main {
         g.joinGroup(jinseok);
         System.out.print(g);
         System.out.println(g.performance());
-        if (g.leaveGroup(jungkook)) {
-            System.out.println(jungkook.getName() + " removed!");
+        if(g.leaveGroup(jungkook)){
+        System.out.println(jungkook.getName()+" removed!");
         }
         System.out.println(g);
         System.out.println(g.performance());
@@ -664,39 +664,38 @@ public class maincode.Main {
         System.out.println(manager.teachDancemove());
 
 
-
         System.out.println("List of Managers");
-        Manager m1 = new Manager("Carlos",
-                2010,
-                1991,
-                4);
-        Manager m2 = new Manager("Camillia",
-                2011,
-                1989,
-                10);
-        Manager m3 = new Manager("Felipe",
-                2007,
-                1990,
-                3);
-        Managercollection collect = new Managercollection();
+        Manager m1=new Manager("Carlos",
+        2010,
+        1991,
+        4);
+        Manager m2=new Manager("Camillia",
+        2011,
+        1989,
+        10);
+        Manager m3=new Manager("Felipe",
+        2007,
+        1990,
+        3);
+        Managercollection collect=new Managercollection();
         collect.addManager(m1);
         collect.addManager(m2);
         collect.addManager(m3);
         System.out.println(collect);
         System.out.println(m3.teachNewSong());
-        if (m1.compare(m2)) {
-            System.out.println(m2.getName()
-                    + " is better than "
-                    + m1.getName());
-        } else {
-            System.out.println(m1.getName()
-                    + " is better than "
-                    + m2.getName());
+        if(m1.compare(m2)){
+        System.out.println(m2.getName()
+        +" is better than "
+        +m1.getName());
+        }else{
+        System.out.println(m1.getName()
+        +" is better than "
+        +m2.getName());
         }
-        
 
-    }
-}
+
+        }
+        }
 
 ```
 
@@ -707,43 +706,43 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 ```java
 
 @Override //redefine de String van employee
-    public String toString() {
-        final String positon = "Position: \t" ;
-        final String idolInGroup = "Idol in group\n";
+public String toString(){
+final String positon="Position: \t";
+final String idolInGroup="Idol in group\n";
 
-        if (dance  //als de Idol een rapper, leader en in een groep is
-                //wordt de bijpassende toString methode uitgevoerd
-                // hier zijn verschillende opties voor
-                && rap
-                && isLeader
-                && inGroup) {
+        if(dance  //als de Idol een rapper, leader en in een groep is
+        //wordt de bijpassende toString methode uitgevoerd
+        // hier zijn verschillende opties voor
+        &&rap
+        &&isLeader
+        &&inGroup){
 
-            return super.toString() + "\n" +
-                    positon +
-                    getRole() + "\n" +
-                    idolInGroup +
-                    "Leader of the group\n" +
-                    "Rapper\n" +
-                    "Dancer\n" +
-                    vocal;
-        } else {
-            if (dance && inGroup) {
-                return super.toString() +
-                        "\n" + positon +
-                        getRole() +
-                        "\n"
-                        + idolInGroup
-                        + " Dancer";
-            }
-            if (rap && inGroup) {
-                return super.toString() + "\n"
-                        + positon + getRole() + "\n"
-                        + idolInGroup
-                        + "Rapper";
-            }
+        return super.toString()+"\n"+
+        positon+
+        getRole()+"\n"+
+        idolInGroup+
+        "Leader of the group\n"+
+        "Rapper\n"+
+        "Dancer\n"+
+        vocal;
+        }else{
+        if(dance&&inGroup){
+        return super.toString()+
+        "\n"+positon+
+        getRole()+
+        "\n"
+        +idolInGroup
+        +" Dancer";
+        }
+        if(rap&&inGroup){
+        return super.toString()+"\n"
+        +positon+getRole()+"\n"
+        +idolInGroup
+        +"Rapper";
+        }
         }
         return super.toString();
-    }
+        }
 
 ```
 
