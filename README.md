@@ -830,6 +830,10 @@ private Double apply2(Double increase){
 ##### 2. Een classe met 2 endpoints (d.m.v. Javalin framework)
 
 1. GET request waarbij er data uit een tekstbestand wordt gelezen en terug gestuurd.
+
+gebruik deze link svp: http://localhost:3412/idols
+
+
 2. POST request waarbij er data wordt weggeschreven naar een tekstbestand.
 
 GET
