@@ -831,13 +831,14 @@ private Double apply2(Double increase){
 
 1. GET request waarbij er data uit een tekstbestand wordt gelezen en terug gestuurd.
 
-gebruik deze link svp: http://localhost:3412/idols
+
 
 
 2. POST request waarbij er data wordt weggeschreven naar een tekstbestand.
 
 GET
 
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\proofget.png)
 ```java
 
 /**
@@ -859,37 +860,68 @@ public static void getFile(Context ctx)throws FileNotFoundException{
 
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/GroupController.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/MainJavalin.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 POST
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\proofpostjavalin.png)
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\javalinproofpost2.png)
 
 ```java
-asd
+ /**
+ * Write POST body to text file
+ *
+ * @param ctx Javalin context
+ * @throws IOException if not able to write
+ */
+public static void postFile(Context ctx)throws IOException{
+        FileOutputStream fileOutputStream=new FileOutputStream("src/main/java/idolPostFile.txt");
+        try(OutputStreamWriter outputStreamWriter=new OutputStreamWriter(fileOutputStream,StandardCharsets.UTF_8)){
+        try(BufferedWriter writer=new BufferedWriter(outputStreamWriter)){
+        writer.write(ctx.body());
+        writer.flush();
+        }
+        }
+
+        }
 ```
 
-Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/GroupController.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
+Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/MainJavalin.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
-```java
-Plaats hier je code snippets voor POST request
-```
-
-Bewijs:  [linknaarhetbronbestandinjerepo]
 
 ##### 3. Een custom Exception "E" gedefiniëerd.
 
-```
-Plaats hier je code snippets
-```
+```java
+      try(Scanner sc=new Scanner(in)){
+        out.println("Increase the salary of an idolgroup. Please enter a number to multipy the 2021 salary with:  ");
+        double profit=sc.nextDouble();
+        out.println("2021 Salary");
+        out.println(g.getGroupMembers().get(0).getSalary());  //get the salary of the first member (they all have the same salary)
 
-Bewijs:  [linknaarhetbronbestandinjerepo](https://gitlab.fdmci.hva.nl/repo-van-jou)
+        out.println("2022 Salary");
+        try{
+        for(Idol idol:g.getGroupMembers()){
+        idol.salaryCalculator(profit);
+        }
 
-##### 4. Custom Exception "E" wordt gebruikt via een `throws` constructie.
+        out.println(g.getGroupMembers().get(0).getSalary());
 
-```
+        }catch(InvalidSalaryIncreaseException e){
 
-    public void salaryCalculator(double increase) throws InvalidSalaryIncreaseException {
-        if (increase < 0)
-            throw new InvalidSalaryIncreaseException();
+        out.println(e.getMessage());
+
+        }
+        }
+        ```
+
+        Bewijs:[https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Idol.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
+
+        ##### 4.Custom Exception"E"wordt gebruikt via een `throws` constructie.
+
+        ```java
+
+public void salaryCalculator(double increase)throws InvalidSalaryIncreaseException{
+        if(increase< 0)
+        throw new InvalidSalaryIncreaseException();
         this.salary = salaryIncrease.apply(increase);
     }
 

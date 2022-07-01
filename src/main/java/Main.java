@@ -92,13 +92,12 @@ public class Main {
                 out.println(g.getGroupMembers().get(0).getSalary());
 
             } catch (InvalidSalaryIncreaseException e) {
-                //trycatch
+
                 out.println(e.getMessage());
 
             }
         }
 
-        //app.put("/idols", ctx -> GroupController.create(ctx, g));
 
 
         m1.createSong(3); //want user to give the imput for the song
