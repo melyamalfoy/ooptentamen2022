@@ -45,6 +45,13 @@ public class Group implements GroupInterface {
         groupList.add(idol);
     }
 
+
+    /**
+     * Idol leaves group
+     *
+     * @param name of the Idol
+     * @return true if the Idol was present in the grup, false if not
+     */
     public boolean leaveGroup(String name) {
         if (groupList.isEmpty())
             return false;

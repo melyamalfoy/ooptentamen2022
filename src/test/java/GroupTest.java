@@ -1,6 +1,8 @@
 import model.Group;
 import model.Idol;
 import model.Manager;
+
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -12,7 +14,8 @@ class GroupTest {
     Group group;
     Idol Rose, Lisa, Jennie, Jisoo;
 
-    public GroupTest() {
+    @BeforeAll
+    public void initialize() {
         Manager manager = new Manager("Yi Hyeo-rae",
                 2021,
                 1980,

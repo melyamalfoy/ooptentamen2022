@@ -1,6 +1,7 @@
 import model.Idol;
 import model.InvalidSalaryIncreaseException;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -10,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class IdolTest {
     Idol iu;
 
-    public IdolTest() {
+    @BeforeAll
+    public void initialize() {
         iu = new Idol("Lisa", 1997, 2016);
     }
 

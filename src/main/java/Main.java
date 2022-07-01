@@ -1,4 +1,4 @@
-import io.javalin.Javalin;
+
 import model.*;
 
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import static java.lang.System.out;
 
 public class Main {
     public static void main(String[] args) {
-        Javalin app = Javalin.create().start(3412);
+        //Javalin app = Javalin.create().start(3412);
 
         Manager manager = new Manager("Fernando",
                 2008,
@@ -17,7 +17,7 @@ public class Main {
 
         Group g = new Group(manager, "BTS");
 
-        app.get("/idols", GroupController::getAll);
+        //app.get("/idols", GroupController::getAll);
 
         g.joinGroup(new Idol("Jungkook",
                 1993,
@@ -98,7 +98,7 @@ public class Main {
             }
         }
 
-        app.put("/idols", ctx -> GroupController.create(ctx, g));
+        //app.put("/idols", ctx -> GroupController.create(ctx, g));
 
 
         m1.createSong(3); //want user to give the imput for the song
