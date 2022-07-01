@@ -1,8 +1,6 @@
 import model.Group;
 import model.Idol;
 import model.Manager;
-
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,8 +12,7 @@ class GroupTest {
     Group group;
     Idol Rose, Lisa, Jennie, Jisoo;
 
-    @BeforeAll
-    public void initialize() {
+    public GroupTest() {
         Manager manager = new Manager("Yi Hyeo-rae",
                 2021,
                 1980,
@@ -62,7 +59,7 @@ class GroupTest {
                 false);
 
 
-        group = new Group(manager, "BlackPink");
+        group = new Group(manager);
         group.joinGroup(Rose);
         group.joinGroup(Lisa);
         group.joinGroup(Jisoo);

@@ -4,13 +4,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.BeforeAll;
-
 class ManagerTest { //comparetest
     Manager manager;
 
-    @BeforeAll
-    public void initialize() {
+    public ManagerTest() {
         manager = new Manager("Yi Hyeo-rae",
                 2021,
                 1980,

@@ -194,7 +194,12 @@ public class Idol extends Employee {
     }
 
 
-    //tells how to compare the idols in the stream
+    /**
+     * tells how to compare the idols in the stream
+     *
+     * @param o
+     * @return compares to see who has the highest date of birth year
+     */
     public int compareTo(Object o) {
         Idol idol = (Idol) o;
         return Integer.compare(idol.getDateOfBirth(), this.getDateOfBirth());

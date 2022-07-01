@@ -207,13 +207,5 @@ b
 2.idea/libraries/Maven__org_yaml_snakeyaml_1_24.xml,e\f\efd1f427d7a5be5e6c56653a43a4df2c97db9b1b
 h
 8.idea/libraries/Maven__org_webjars_swagger_ui_3_25_2.xml,3\e\3ebd662a5945a97bf1afe384e305b3d099f32bb3
-g
-7src/main/java/model/InvalidSalaryIncreaseException.java,3\e\3efd09492cec0c0af259a60c26243418d5b7c826
-X
-(src/main/java/model/NewGroupRequest.java,1\6\164fcf1bdcd47b38b0a85ac71d460d2222958ce4
-Z
-*src/main/java/model/Managercollection.java,8\8\88e1012c94f5ab9cd3010d8dd2b6e27852bda15a
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-P
- src/main/java/model/Manager.java,5\8\58b07ee7f6915ad212e222ace14003a949a8f3f8

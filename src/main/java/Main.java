@@ -8,16 +8,14 @@ import static java.lang.System.out;
 
 public class Main {
     public static void main(String[] args) {
-        //Javalin app = Javalin.create().start(3412);
 
         Manager manager = new Manager("Fernando",
                 2008,
                 1990,
                 5);
 
-        Group g = new Group(manager, "BTS");
+        Group g = new Group(manager);
 
-        //app.get("/idols", GroupController::getAll);
 
         g.joinGroup(new Idol("Jungkook",
                 1993,
@@ -98,9 +96,10 @@ public class Main {
             }
         }
 
-
-
-        m1.createSong(3); //want user to give the imput for the song
+        /**
+         * a random song title is made with the newSong from manager
+         */
+        m1.createSong(3);
         out.println("The manager wrote the following title for the next song: ");
         out.println(m1.showSong());
 

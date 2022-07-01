@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Employee {
-    private String name;
+    private final String name;
     private final int dateOfBirth;
     private final int dateStartOfContract;
 
@@ -9,10 +9,6 @@ public abstract class Employee {
         name = "no name";
         dateOfBirth = 2008;
         dateStartOfContract = 0;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     protected Employee(String name,

@@ -11,11 +11,9 @@ public class MainJavalin {
         app.before(ctx -> {
 
         });
-        app.get("/idols", ctx -> getFile(ctx));
+        app.get("/idols", MainJavalin::getFile);
 
-        app.post("/upload", ctx -> {
-            postFile(ctx);
-        });
+        app.post("/upload", MainJavalin::postFile);
 
 
     }

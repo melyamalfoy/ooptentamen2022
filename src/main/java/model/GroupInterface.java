@@ -1,5 +1,8 @@
 package model;
 
-interface GroupInterface { //empty behaviour
+/**
+ * empty behaviour
+ */
+interface GroupInterface {
     String performance();
 }

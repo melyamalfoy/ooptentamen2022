@@ -1,43 +1,44 @@
 package model;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 public class Group implements GroupInterface {
-    public ArrayList<Idol> groupList;
+    public List<Idol> groupList;
     private final Manager manager;
-    private final String groupName;
 
     public Group() {
         groupList = new ArrayList();
         manager = new Manager();
-        groupName = "None";
 
     }
 
     public Group(String name) {
         groupList = new ArrayList();
         manager = new Manager();
-        groupName = name;
 
     }
 
-    public Group(Manager manager, String groupName) {
+    public Group(Manager manager) {
         groupList = new ArrayList();
         this.manager = manager;
-        this.groupName = groupName;
     }
 
-    //de ene constructer roept de andere aan
-    public Group(ArrayList<Idol> group,
-                 Manager manager,
-                 String groupName) {
-        this(manager, groupName);
+
+    /**
+     * One constructor calls the other
+     *
+     * @param group
+     * @param manager
+     */
+    public Group(List<Idol> group,
+                 Manager manager) {
+        this(manager);
         this.groupList = group;
     }
 
-    public ArrayList<Idol> getGroupMembers() {
+    public List<Idol> getGroupMembers() {
         return this.groupList;
     }
 
@@ -81,10 +82,9 @@ public class Group implements GroupInterface {
                 + manager.toString()
                 + "\n" + "Idols:\n";
 
-        for (Idol id : groupList) {
+        for (Idol id : groupList)
             information = information + id.toString() +
                     "\n";
-        }
         return information;
     }
 
@@ -93,7 +93,7 @@ public class Group implements GroupInterface {
     // stream that checks who's the maknae of a group
     public Idol maknae() {
         return groupList.stream()
-                .filter(x -> x.isDance() == false) // .filter is intermediate
+                .filter(x -> !x.isDance()) // .filter is intermediate
                 .min((a, b) -> a.compareTo(b))
                 .get();  //.min is terminal stream
     }
