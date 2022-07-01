@@ -25,7 +25,7 @@ Doel Kpop programma;
 
 https://lucid.app/lucidchart/b142287e-0925-4bf2-950e-3de9cdde1ec4/edit?invitationId=inv_0a48722b-0712-46d5-951e-0b8f39fc3772
 
-![uml](src/main/media/MelanieGrimminckUML.png)
+![uml](src/main/MelanieGrimminckUML.png)
 
 ```puml
 @startuml
@@ -755,7 +755,7 @@ Naast de OOP1 voorwaarden dient je OOP2 programma aan de volgende voorwaarden te
 ##### 1. Gebruikt en implementeert minimaal 2 functionele interfaces uit de package `java.util.function`
 
 1. Het liedje is gemaakt met Koreaanse tekens, zo zou het er uit moeten zien:
-   ![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\proofutil.png)
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\src\main\media\proofutil.png)
    Zonder Koreaans pakket krijgt u vraagtekens.
 
 ```java
@@ -825,7 +825,7 @@ private Double apply2(Double increase){
 ```
 
 [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/model/Idol.java]](https://gitlab.fdmci.hva.nl/repo-van-jou)
-![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\javalinproof.png)
+!![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\src\main\media\javalinproof.png)[](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\javalinproof.png)
 
 ##### 2. Een classe met 2 endpoints (d.m.v. Javalin framework)
 
@@ -838,7 +838,7 @@ private Double apply2(Double increase){
 
 GET
 
-![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\proofget.png)
+!![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\src\main\media\proofget.png)[](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\proofget.png)
 ```java
 
 /**
@@ -863,8 +863,8 @@ public static void getFile(Context ctx)throws FileNotFoundException{
 Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/blob/main/src/main/java/MainJavalin.java](https://gitlab.fdmci.hva.nl/repo-van-jou)
 
 POST
-![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\proofpostjavalin.png)
-![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\javalinproofpost2.png)
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\src\main\media\proofpostjavalin.png)
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\src\main\media\javalinproofpost2.png)
 
 ```java
  /**
@@ -1013,7 +1013,7 @@ Bewijs:  [https://gitlab.fdmci.hva.nl/oop-dt/2122/id1s1/melanie-egas-tentamen/-/
 
 ##### 8. Testcode met 100% code coverage
 
-![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\testproof.png)
+![](C:\Users\melan\OneDrive\Bureaublad\melanie-egas-tentamen\src\main\media\testproof.png)
 
 GroupTest
 
